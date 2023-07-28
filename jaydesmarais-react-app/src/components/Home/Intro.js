@@ -22,7 +22,7 @@ const Intro = () => {
       <StyledSubHeader>
         <a href="https://jaydesmarais.carrd.co">
           jaydesmarais.carrd.co
-        </Link>
+        </a>
       </StyledSubHeader>
     </>
   )
