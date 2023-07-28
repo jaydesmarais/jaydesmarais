@@ -1,14 +1,22 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
+import GlobalStyle from '../../styles/GlobalStyle'
 import Head from './Head'
 import NavBar from './NavBar'
 import Footer from './Footer'
 
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
     <>
       <Head />
-      <NavBar />
-      <Footer />
+      <GlobalStyle />
+      <>
+        <NavBar />
+        <div id='section'>
+          <Outlet/>
+        </div>
+        <Footer />
+      </>
     </>
 
   )
