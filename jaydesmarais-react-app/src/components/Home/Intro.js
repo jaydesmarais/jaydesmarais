@@ -20,7 +20,7 @@ const Intro = () => {
         I'm currently building my new website, but feel free to check out my current (very boring) site.
       </StyledSubHeader>
       <StyledSubHeader>
-        <Link to={{ pathname: "https://jaydesmarais.carrd.co" }} target="_blank">
+        <a href="https://jaydesmarais.carrd.co">
           jaydesmarais.carrd.co
         </Link>
       </StyledSubHeader>
