@@ -1,11 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
  
 const GlobalStyle = createGlobalStyle`
+  * {
+    font-family: Unbounded;
+  }
+
   body {
     margin: 0;
     padding: 0;
     background: black;
-    font-family: Unbounded;
   }
 
   h1,
