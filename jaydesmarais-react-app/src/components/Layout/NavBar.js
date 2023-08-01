@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-scroll'
 
 const StyledNavBar = styled.nav`
 
@@ -15,13 +15,14 @@ const StyledLinkList = styled.ol`
 
 const StyledLink = styled.li`
   margin: 0 5px;
+  color:white
 `
 
 const navLinks = [
-  {name: 'about', link: '#about'},
-  {name: 'experience', link: '#experience'},
-  {name: 'projects', link: '#projects'},
-  {name: 'contact', link: '#contact'}
+  {name: 'about', link: 'about'},
+  {name: 'experience', link: 'experience'},
+  {name: 'projects', link: 'projects'},
+  {name: 'contact', link: 'contact'}
 ]
 
 const NavBar = () => {
@@ -31,7 +32,9 @@ const NavBar = () => {
         {navLinks.map(({name, link}) => {
           return (
             <StyledLink>
-              <Link to={link}>{name}</Link>
+              <Link to={link} spy={true} hashSpy={true} smooth={true}>
+                {name}
+              </Link>
             </StyledLink>
           )
         })}
