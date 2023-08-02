@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
- 
+
 const GlobalStyle = createGlobalStyle`
   * {
     font-family: Unbounded;
@@ -20,5 +20,5 @@ const GlobalStyle = createGlobalStyle`
     color: white;
   }
 `;
- 
+
 export default GlobalStyle;

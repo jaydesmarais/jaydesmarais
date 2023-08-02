@@ -15,7 +15,7 @@ const StyledNavBar = styled.nav`
   max-width: 900px;
 
   @media (max-width: 900px) {
-    transform: scale(0.7);
+    transform: scale(0.9);
   }
 `
 
