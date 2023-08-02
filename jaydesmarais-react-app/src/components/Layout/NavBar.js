@@ -1,46 +1,102 @@
 import React from 'react'
+import { PropTypes } from 'prop-types'
 import styled from 'styled-components'
-import { Link } from 'react-scroll'
+import { Link as ScrollLink } from 'react-scroll'
+import { NavLink } from 'react-router-dom'
 
 const StyledNavBar = styled.nav`
+  position: -webkit-sticky;
+  position: sticky;
+  display: block;
+  top: 0;
+  height: 0;
+  margin: auto;
+  text-align: center;
+  max-width: 900px;
 
+  @media (max-width: 900px) {
+    transform: scale(0.7);
+  }
 `
 
-const StyledLinkList = styled.ol`
-  display: flex;
-  padding: 0;
-  margin: 0;
+const StyledLinkList = styled.ul`
+  background-color: rgba(50,50,50,.9);
+  display: inline-block;
+
+  padding: 15px 40px;
+  border-radius: 10px;
   list-style: none;
+  
+  @media (max-width: 900px) {
+    transform: scale(0.9);
+  }
 `
 
 const StyledLink = styled.li`
-  margin: 0 5px;
-  color:white
+  display: inline-block;
+  color: rgba(255,255,255,.9);
+  cursor: pointer;
+
+  a {
+    padding: 7px 25px;
+    text-decoration: none;
+    color: inherit; 
+
+      @media (max-width: 900px) {
+        padding: 7px 13px;
+      }
+  }
+
+  a.active {
+    border-radius: 10px;
+    background-color: rgba(0,0,0,.5);
+  }
 `
 
 const navLinks = [
-  {name: 'about', link: 'about'},
-  {name: 'experience', link: 'experience'},
-  {name: 'projects', link: 'projects'},
-  {name: 'contact', link: 'contact'}
+  {name: '/', link:'intro'},
+  {name: '#about', link: 'about'},
+  {name: '#experience', link: 'experience'},
+  {name: '#projects', link: 'projects'},
+  {name: '#contact', link: 'contact'}
 ]
 
-const NavBar = () => {
+const backLinks = [
+  {name: '/', link: '/'},
+  {name: '/resume', link: '/resume', active: 'true'},
+]
+
+const NavBar = ({ location }) => {
+
   return (
     <StyledNavBar>
+
       <StyledLinkList>
-        {navLinks.map(({name, link}) => {
+        {location && location.pathname === "/" ? navLinks.map(({name, link}, i) => {
           return (
-            <StyledLink>
-              <Link to={link} spy={true} hashSpy={true} smooth={true}>
+            <StyledLink key={i}>
+              <ScrollLink to={link} spy={true} hashSpy={true} smooth={true}>
                 {name}
-              </Link>
+              </ScrollLink>
+            </StyledLink>
+          )
+        }) : backLinks.map(({name, link}, i) => {
+          return (
+            <StyledLink key={i}>
+              <NavLink to={link}>
+                {name}
+              </NavLink>
             </StyledLink>
           )
         })}
       </StyledLinkList>
+
     </StyledNavBar>
   )
+}
+
+NavBar.propTypes = {
+  location: PropTypes.object.isRequired
 }
 
 export default NavBar

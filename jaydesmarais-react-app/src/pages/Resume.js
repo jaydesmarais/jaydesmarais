@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components'
 
 const StyledContainer = styled.div`
-  width: 100%;
-  height: 75vh;
+  padding-top: 10vh;
+  height: 80vh;
 `
 
 const StyledIframe = styled.iframe`

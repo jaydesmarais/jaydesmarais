@@ -2,7 +2,7 @@ import React from 'react'
 
 const Experience = () => {
   return (
-    <h1 id="experience" style={{marginTop:'500px'}}>
+    <h1 id="experience" style={{paddingTop:'20vh', alignItems:'left', height: '80vh', display: 'grid'}}>
       Experience
     </h1>
   )

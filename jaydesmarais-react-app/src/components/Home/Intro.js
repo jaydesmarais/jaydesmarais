@@ -2,6 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
+const StyledContainer = styled.div`
+  padding-top: 20vh;
+  height: 80vh;
+`
+
 const StyledHeader = styled.h1`
   text-align: left
 `
@@ -25,7 +30,7 @@ const StyledButton = styled.button`
 
 const Intro = () => {
   return (
-    <>
+    <StyledContainer id="intro">
       <StyledHeader>
         Jay Desmarais
       </StyledHeader>
@@ -38,7 +43,7 @@ const Intro = () => {
       <Link to="/resume">
         <StyledButton>Check out my resume</StyledButton>
       </Link>
-    </>
+    </StyledContainer>
   )
 }
 
