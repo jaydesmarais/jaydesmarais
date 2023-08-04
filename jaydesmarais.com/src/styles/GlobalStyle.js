@@ -16,7 +16,8 @@ const GlobalStyle = createGlobalStyle`
   h4,
   h5,
   h6,
-  p {
+  p,
+  ul {
     color: white;
   }
 `;
