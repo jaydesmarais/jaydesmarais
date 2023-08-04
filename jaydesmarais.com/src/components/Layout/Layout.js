@@ -21,9 +21,11 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <>
         <NavBar location={location} />
+
         <StyledChild>
           <Outlet />
         </StyledChild>
+
         <Footer />
       </>
     </>

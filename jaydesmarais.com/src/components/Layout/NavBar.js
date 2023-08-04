@@ -7,6 +7,7 @@ import { NavLink } from 'react-router-dom'
 const StyledNavBar = styled.nav`
   position: -webkit-sticky;
   position: sticky;
+  z-index: 1000;
   display: block;
   top: 0;
   height: 0;
@@ -38,6 +39,7 @@ const StyledLink = styled.li`
   cursor: pointer;
 
   a {
+    margin: 0 5px;
     padding: 7px 25px;
     text-decoration: none;
     color: inherit; 
@@ -45,25 +47,30 @@ const StyledLink = styled.li`
       @media (max-width: 900px) {
         padding: 7px 13px;
       }
-  }
 
-  a.active {
-    border-radius: 10px;
-    background-color: rgba(0,0,0,.5);
+    &:hover {
+      border-radius: 10px;
+      background-color: rgba(0,0,0,.25);
+    }
+
+    &.active {
+      border-radius: 10px;
+      background-color: rgba(0,0,0,.5);
+    }
   }
 `
 
 const navLinks = [
-  {name: '/', link:'intro'},
-  {name: '#about', link: 'about'},
-  {name: '#experience', link: 'experience'},
-  {name: '#projects', link: 'projects'},
-  {name: '#contact', link: 'contact'}
+  { name: '/', link: 'intro' },
+  { name: '#about', link: 'about' },
+  { name: '#experience', link: 'experience' },
+  { name: '#projects', link: 'projects' },
+  { name: '#contact', link: 'contact' }
 ]
 
 const backLinks = [
-  {name: '/', link: '/'},
-  {name: '/resume', link: '/resume', active: 'true'},
+  { name: '/', link: '/' },
+  { name: '/resume', link: '/resume', active: 'true' },
 ]
 
 const NavBar = ({ location }) => {
@@ -72,7 +79,7 @@ const NavBar = ({ location }) => {
     <StyledNavBar>
 
       <StyledLinkList>
-        {location && location.pathname === "/" ? navLinks.map(({name, link}, i) => {
+        {location && location.pathname === "/" ? navLinks.map(({ name, link }, i) => {
           return (
             <StyledLink key={i}>
               <ScrollLink to={link} spy={true} hashSpy={true} smooth={true}>
@@ -80,7 +87,7 @@ const NavBar = ({ location }) => {
               </ScrollLink>
             </StyledLink>
           )
-        }) : backLinks.map(({name, link}, i) => {
+        }) : backLinks.map(({ name, link }, i) => {
           return (
             <StyledLink key={i}>
               <NavLink to={link}>
@@ -91,7 +98,7 @@ const NavBar = ({ location }) => {
         })}
       </StyledLinkList>
 
-    </StyledNavBar>
+    </StyledNavBar >
   )
 }
 

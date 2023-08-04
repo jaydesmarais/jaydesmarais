@@ -2,11 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledContainer = styled.div`
-  padding-top:'20vh';
-  align-items:'left';
-  height: '80vh';
-  display: 'grid';
-  color: white;
+  padding-top: 20vh;
+  height: 65vh;
 `
 
 const Experience = () => {
