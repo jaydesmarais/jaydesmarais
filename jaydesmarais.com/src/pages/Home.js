@@ -5,15 +5,14 @@ import Experience from '../components/Home/Experience'
 import Projects from '../components/Home/Projects'
 import Contact from '../components/Home/Contact'
 
-
 const Home = () => {
   return (
     <>
-      <Intro/>
-      <About/>
-      <Experience/>
-      <Projects/>
-      <Contact/>
+      <Intro />
+      <About />
+      <Experience />
+      <Projects />
+      <Contact />
     </>
   )
 }
