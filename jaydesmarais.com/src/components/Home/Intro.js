@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 import styled, { keyframes } from 'styled-components'
 
 const StyledContainer = styled.div`
-  padding-top: 20vh;
-  height: 80vh;
+  position: relative;
+  padding: 10vh 0;
   width: 100%;
+  min-height: 65vh;
 `
 
 const StyledHeader = styled.h1`

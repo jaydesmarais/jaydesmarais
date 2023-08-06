@@ -3,8 +3,9 @@ import styled from 'styled-components'
 import { BsGithub, BsFiletypePdf, BsFileEarmarkZip } from 'react-icons/bs'
 
 const StyledContainer = styled.div`
+  position: relative;
   padding-top: 20vh;
-  height: 65vh;
+  min-height: 65vh;
 `
 
 const StyledButton = styled.a`
