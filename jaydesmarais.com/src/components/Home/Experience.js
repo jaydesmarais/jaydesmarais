@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledContainer = styled.div`
+  position: relative;
   padding-top: 20vh;
-  height: 65vh;
+  min-height: 65vh;
 `
 
 const Experience = () => {
