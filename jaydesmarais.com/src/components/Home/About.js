@@ -3,8 +3,7 @@ import styled from 'styled-components'
 
 const StyledContainer = styled.div`
   position: relative;
-  padding-top: 20vh;
-  min-height: 65vh;
+  padding: 10vh 0;
 `
 
 const About = () => {

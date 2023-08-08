@@ -4,8 +4,12 @@ import styled, { keyframes } from 'styled-components'
 
 const StyledContainer = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 10vh 0;
-  min-height: 65vh;
+  width: 100%;
+  min-height: 80vh;
 `
 
 const StyledHeader = styled.h1`
@@ -52,7 +56,7 @@ const StyledButton = styled.button`
 const StyledScrollArrow = styled.div`
   position: relative;
   left: 50%;
-  top: 20vh;
+  bottom: -5vh;
   width: 40px;
   height: 40px;
   transform: rotate(45deg);

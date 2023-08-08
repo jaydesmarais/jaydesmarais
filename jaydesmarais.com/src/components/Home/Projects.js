@@ -4,8 +4,7 @@ import { BsGithub, BsFiletypePdf, BsFileEarmarkZip } from 'react-icons/bs'
 
 const StyledContainer = styled.div`
   position: relative;
-  padding-top: 20vh;
-  min-height: 65vh;
+  padding: 10vh 0;
 `
 
 const StyledButtonGroup = styled.div`

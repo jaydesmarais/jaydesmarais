@@ -20,13 +20,11 @@ const StyledNavBar = styled.nav`
 
 const StyledLinkList = styled.ul`
   display: inline-flex;
-  flex-wrap: wrap;
   justify-content: space-around;
   background-color: rgba(50,50,50,.9);
   padding: 15px 10px;
   border-radius: 10px;
   list-style: none;
-  max-width: 70%;
 `
 
 const StyledLink = styled.li`

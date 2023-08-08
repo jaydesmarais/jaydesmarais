@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const StyledContainer = styled.div`
   position: relative;
-  padding-top: 10vh;
+  padding: 10vh 0;
 `
 
 const Contact = () => {

@@ -16,20 +16,14 @@ const StyledNavMenu = styled.nav`
     text-align: center;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
-    position: fixed;
-    right: 0;
-    top: 0;
-    flex-wrap: wrap;
     background-color: rgba(50,50,50,.9);
-    border-radius: 10px 0px 0px 10px;
-    list-style: none;
     height: 100%;
     width: 100%;
   } 
 `
 
 const StyledMenuButton = styled.button`
+  color: white;
   display: none;
 
   @media (max-width: 720px) {
@@ -41,8 +35,8 @@ const StyledMenuButton = styled.button`
     z-index: 1000;
     padding: 15px 15px;
     border: none;
-    border-radius: 10px; 
     background: none;
+    border-radius: 10px; 
   }
 `
 
@@ -54,17 +48,18 @@ const StyledLinkList = styled.ul`
   border-radius: 10px;
   list-style: none;
   max-width: 70%;
+  font-size: larger;
 `
 
 const StyledLink = styled.li`
-  padding: 25px 10px;
+  padding: 5vh 2vw;
   width: 100%;
   color: rgba(255,255,255,.9);
 
   a {
     cursor: pointer;
     margin: 0 5px;
-    padding: 7.5px 20px;
+    padding: 25px 50px;
     text-decoration: none;
     color: inherit; 
 
@@ -84,18 +79,25 @@ const NavMenu = ({ location }) => {
 
   const [menuOpen, setMenuOpen] = useState(false)
 
-  window.addEventListener('resize', () => { setMenuOpen(false) })
+  const handleResize = () => {
+    if (menuOpen && window.innerWidth >= 720) {
+      setMenuOpen(false)
+    }
+  }
+
+  window.addEventListener('resize', handleResize)
 
   return (
     <>
       <StyledMenuButton>
         {menuOpen
-          ? <BsXLg color='white' size='50' onClick={() => setMenuOpen(!menuOpen)} />
-          : <BsList color='white' size='50' onClick={() => setMenuOpen(!menuOpen)} />
+          ? <BsXLg size='50' onClick={() => setMenuOpen(!menuOpen)} />
+          : <BsList size='50' onClick={() => setMenuOpen(!menuOpen)} />
         }
       </StyledMenuButton>
+
       {menuOpen ?
-        <StyledNavMenu>
+        <StyledNavMenu onClick={() => setMenuOpen(false)}>
           <StyledLinkList>
             {location && location.pathname === "/" ? navLinks.map(({ name, link }, i) => {
               return (
