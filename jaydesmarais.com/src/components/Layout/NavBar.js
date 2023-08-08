@@ -5,48 +5,34 @@ import { Link as ScrollLink } from 'react-scroll'
 import { NavLink } from 'react-router-dom'
 
 const StyledNavBar = styled.nav`
-  position: -webkit-sticky;
-  position: sticky;
-  z-index: 1000;
-  display: block;
+  position: fixed;
   top: 0;
-  height: 0;
-  margin: auto;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 1000;
   text-align: center;
-  max-width: 900px;
-
-  @media (max-width: 900px) {
-    transform: scale(0.9);
-  }
 `
 
 const StyledLinkList = styled.ul`
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   background-color: rgba(50,50,50,.9);
-  display: inline-block;
-
-  padding: 15px 40px;
+  padding: 15px 10px;
   border-radius: 10px;
   list-style: none;
-  
-  @media (max-width: 900px) {
-    transform: scale(0.9);
-  }
+  max-width: 70%;
 `
 
 const StyledLink = styled.li`
-  display: inline-block;
   color: rgba(255,255,255,.9);
-  cursor: pointer;
 
   a {
+    cursor: pointer;
     margin: 0 5px;
-    padding: 7px 25px;
+    padding: 7.5px 20px;
     text-decoration: none;
     color: inherit; 
-
-      @media (max-width: 900px) {
-        padding: 7px 13px;
-      }
 
     &:hover {
       border-radius: 10px;

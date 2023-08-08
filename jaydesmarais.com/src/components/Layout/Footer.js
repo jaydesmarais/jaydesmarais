@@ -30,7 +30,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <StyledContainer id="experience">
+    <StyledContainer>
       <h1>Thanks for visiting!</h1>
 
       {socialLinks.map(({ name, link, icon }, i) => {

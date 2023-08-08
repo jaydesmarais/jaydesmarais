@@ -5,7 +5,6 @@ import styled, { keyframes } from 'styled-components'
 const StyledContainer = styled.div`
   position: relative;
   padding: 10vh 0;
-  width: 100%;
   min-height: 65vh;
 `
 
