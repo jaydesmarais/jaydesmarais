@@ -3,6 +3,7 @@ import { PropTypes } from 'prop-types'
 import styled from 'styled-components'
 import { Link as ScrollLink } from 'react-scroll'
 import { NavLink } from 'react-router-dom'
+import { backLinks, navLinks } from '../../config'
 
 const StyledNavBar = styled.nav`
   position: fixed;
@@ -11,6 +12,10 @@ const StyledNavBar = styled.nav`
   margin: 0 auto;
   z-index: 1000;
   text-align: center;
+
+  @media (max-width: 720px) {
+    display: none;
+  }
 `
 
 const StyledLinkList = styled.ul`
@@ -46,45 +51,32 @@ const StyledLink = styled.li`
   }
 `
 
-const navLinks = [
-  { name: '/', link: 'intro' },
-  { name: '#about', link: 'about' },
-  { name: '#experience', link: 'experience' },
-  { name: '#projects', link: 'projects' },
-  { name: '#contact', link: 'contact' }
-]
-
-const backLinks = [
-  { name: '/', link: '/' },
-  { name: '/resume', link: '/resume', active: 'true' },
-]
-
 const NavBar = ({ location }) => {
 
   return (
-    <StyledNavBar>
-
-      <StyledLinkList>
-        {location && location.pathname === "/" ? navLinks.map(({ name, link }, i) => {
-          return (
-            <StyledLink key={i}>
-              <ScrollLink to={link} spy={true} hashSpy={true} smooth={true}>
-                {name}
-              </ScrollLink>
-            </StyledLink>
-          )
-        }) : backLinks.map(({ name, link }, i) => {
-          return (
-            <StyledLink key={i}>
-              <NavLink to={link}>
-                {name}
-              </NavLink>
-            </StyledLink>
-          )
-        })}
-      </StyledLinkList>
-
-    </StyledNavBar >
+    <>
+      <StyledNavBar>
+        <StyledLinkList>
+          {location && location.pathname === "/" ? navLinks.map(({ name, link }, i) => {
+            return (
+              <StyledLink key={i}>
+                <ScrollLink to={link} spy={true} hashSpy={true} smooth={true}>
+                  {name}
+                </ScrollLink>
+              </StyledLink>
+            )
+          }) : backLinks.map(({ name, link }, i) => {
+            return (
+              <StyledLink key={i}>
+                <NavLink to={link}>
+                  {name}
+                </NavLink>
+              </StyledLink>
+            )
+          })}
+        </StyledLinkList>
+      </StyledNavBar >
+    </>
   )
 }
 

@@ -10,6 +10,7 @@ const StyledContainer = styled.div`
 
 const StyledButtonGroup = styled.div`
   display: flex;
+  flex-wrap: wrap;
   text-align: center;
 `
 

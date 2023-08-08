@@ -4,6 +4,7 @@ import GlobalStyle from '../../styles/GlobalStyle'
 import styled from 'styled-components'
 import Head from './Head'
 import NavBar from './NavBar'
+import NavMenu from './NavMenu'
 import Footer from './Footer'
 import LeftSideBar from './LeftSideBar'
 import RightSideBar from './RightSideBar'
@@ -24,20 +25,25 @@ const StyledLeftChild = styled.div`
   width: 15%;
   text-align: center;
 
-  @media (max-width: 600px) {
+  @media (max-width: 720px) {
     display:none
   }
 `
 
 const StyledMiddleChild = styled.div`
   width: 70%;
+  max-width: 1440px;
+
+  @media (max-width: 720px) {
+    width: 90%;
+  }
 `
 
 const StyledRightChild = styled.div`
   width: 15%;
   text-align: center;
 
-  @media (max-width: 600px) {
+  @media (max-width: 720px) {
     display:none
   }
 `
@@ -53,6 +59,7 @@ const Layout = () => {
       <StyledContainer>
 
         <NavBar location={location} />
+        <NavMenu location={location} />
 
         <StyledChildren>
           <StyledLeftChild>
