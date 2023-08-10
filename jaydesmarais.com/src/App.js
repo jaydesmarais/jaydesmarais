@@ -1,9 +1,9 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Layout from './components/Layout/Layout'
-import Home from './pages/Home'
-import Resume from './pages/Resume'
-import NotFound from './pages/NotFound'
+import Layout from 'sections/Layout/Layout'
+import Home from 'pages/Home'
+import Resume from 'pages/Resume'
+import NotFound from 'pages/NotFound'
 
 const App = () => {
   return (

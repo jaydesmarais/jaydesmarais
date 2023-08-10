@@ -55,10 +55,10 @@ const NavBar = ({ location }) => {
     <>
       <StyledNavBar>
         <StyledLinkList>
-          {location && location.pathname === "/" ? navLinks.map(({ name, link }, i) => {
+          {location && location.pathname === "/" ? navLinks.map(({ name, link, offset }, i) => {
             return (
               <StyledLink key={i}>
-                <ScrollLink to={link} spy={true} hashSpy={true} smooth={true}>
+                <ScrollLink to={link} spy={true} hashSpy={true} smooth={true} offset={offset}>
                   {name}
                 </ScrollLink>
               </StyledLink>

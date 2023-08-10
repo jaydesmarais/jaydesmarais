@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { BsLinkedin, BsGithub, BsInstagram, BsFillEnvelopeFill, BsFillChatFill } from 'react-icons/bs'
 
 const StyledContainer = styled.div`
-  height: 20vh;
+  min-height: 20vh;
   text-align: center;
 `
 
@@ -11,7 +11,7 @@ const StyledSocialIcons = styled.a`
   display: inline-block;
   color: white;
   margin: 1vh 1vw;
-  padding: 1vh 2.5vw;
+  padding: 1vh 2vw;
 
   &:hover {
     background-color: white;
@@ -31,8 +31,6 @@ const socialLinks = [
 const Footer = () => {
   return (
     <StyledContainer>
-      <h1>Thanks for visiting!</h1>
-
       {socialLinks.map(({ name, link, icon }, i) => {
         return (
           <StyledSocialIcons href={link} key={name} target="_blank">
@@ -40,6 +38,8 @@ const Footer = () => {
           </StyledSocialIcons>
         )
       })}
+
+      <h2>Thanks for stopping by!</h2>
 
     </StyledContainer>
   )

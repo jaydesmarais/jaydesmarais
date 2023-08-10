@@ -1,6 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import styled, { keyframes } from 'styled-components'
+import PrimaryLink from 'components/Buttons'
+import { BsGithub, BsFiletypePdf } from 'react-icons/bs'
+import { PrimaryRouteLink } from 'components/Buttons'
 
 const StyledContainer = styled.div`
   position: relative;
@@ -9,27 +11,32 @@ const StyledContainer = styled.div`
   justify-content: center;
   padding: 10vh 0;
   width: 100%;
-  min-height: 80vh;
+  min-height: 75vh;
 `
 
 const StyledHeader = styled.h1`
-  text-align: left
+  font-size: 400%;
+  text-align: left;
+
+  @media (max-width: 720px) {
+    font-size: 300%;
+  }
 `
 
 const StyledSubHeader = styled.h3`
-  text-align: left
+  text-align: left;
 `
 
 const StyledText = styled.p`
-  text-align: left
+  text-align: left;
 `
 
-const StyledWarning = styled.p`
+const StyledWarning = styled.div`
   margin-top: 10vh;
-  padding: 1vh;
+  padding: 20px;
   text-align: center;
-  border-radius: 100px;
-  background-color: rgba(255,255,255,.15);
+  border-radius: 10px;
+  background-color: rgba(50,50,50,.9);
 `
 
 const scrollAnimation = keyframes`
@@ -37,26 +44,10 @@ const scrollAnimation = keyframes`
   100% { opacity: 0; transform: translate(-10px, -10px) }
 `
 
-const StyledButton = styled.button`
-  font-size: small;
-  color: white;
-  background-color: black;
-  border-color: white;
-  border-radius: 10px;
-  padding: 20px 50px;
-  cursor: pointer;
-
-  &:hover {
-    color: black;
-    background-color: white;
-    border-color: black;
-  }
-`
-
 const StyledScrollArrow = styled.div`
   position: relative;
   left: 50%;
-  bottom: -5vh;
+  bottom: -10vh;
   width: 40px;
   height: 40px;
   transform: rotate(45deg);
@@ -87,9 +78,7 @@ const Intro = () => {
   return (
     <StyledContainer id="intro">
       <StyledHeader>
-        <h1>
-          Jay Desmarais
-        </h1>
+        Jay Desmarais
       </StyledHeader>
       <StyledSubHeader>
         I design and build things for the web
@@ -97,22 +86,27 @@ const Intro = () => {
       <StyledText>
         I{"'"}m a software engineer with a wide range of experience and education in the realms of full-stack programming, algorithms, UI/UX, cybersecurity, and more, which I pull from to design and build solutions to complex problems.
       </StyledText>
-      <Link to="/resume">
-        <StyledButton>Check out my resume</StyledButton>
-      </Link>
+      <PrimaryRouteLink to="/resume" style={{ textDecoration: 'none' }}>
+        Check out my Resume &nbsp;
+        <BsFiletypePdf size={20} />
+      </PrimaryRouteLink>
 
       <StyledWarning>
         <h2>
           I{"'"}m still building and adding to this website!
         </h2>
         <p>
-          Check back for occasional updates and improvements!
+          Check back for occasional updates and improvements or check the progress on github!
         </p>
+        <PrimaryLink href='https://github.com/jaydesmarais/jaydesmarais' target='_blank'>
+          Source Code &nbsp;
+          <BsGithub size={20} />
+        </PrimaryLink>
       </StyledWarning>
 
       <StyledScrollArrow />
 
-    </StyledContainer>
+    </StyledContainer >
   )
 }
 
