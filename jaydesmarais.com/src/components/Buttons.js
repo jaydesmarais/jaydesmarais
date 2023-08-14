@@ -12,8 +12,8 @@ export const PrimaryLink = styled.a`
   border: 2px solid white;
   border-radius: 10px;
   color: white;
-  margin: 1vh 1vw;
-  padding: 1vh 2vw;
+  margin: 1em 1vw;
+  padding: 1em 2vw;
   cursor: pointer;
   text-decoration: none;
 
@@ -35,8 +35,8 @@ export const PrimaryButton = styled.button`
   border: 2px solid white;
   border-radius: 10px;
   color: white;
-  margin: 1vh 1vw;
-  padding: 1vh 2vw;
+  margin: 1em 1vw;
+  padding: 1em 2vw;
   cursor: pointer;
   background-color: black;
   text-decoration: none;
@@ -60,8 +60,8 @@ export const PrimaryRouteLink = styled(Link)`
   border: 2px solid white;
   border-radius: 10px;
   color: white;
-  margin: 1vh 1vw;
-  padding: 1vh 2vw;
+  margin: 1em 1vw;
+  padding: 1em 2vw;
 
   &:hover {
     background-color: white;
