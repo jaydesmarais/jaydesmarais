@@ -21,7 +21,7 @@ const Projects = () => {
       <h1>Projects</h1>
       <br />
       <h3>
-        jaydesmarais.com - My Personal Website!
+        JayDesmarais.com - My Personal Website!
       </h3>
       <p>
         I'm building my own website! To do so, I am using <strong>JavaScript</strong>, <strong>React</strong>, and <strong>CSS</strong> through styled-components. I will continue to iterate and improve on it over the next few weeks while I continue to play with and learn more about interactive and fluid web designs!

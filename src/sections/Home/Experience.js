@@ -6,6 +6,10 @@ const StyledContainer = styled.div`
   position: relative;
   padding-top: 7vh;
   padding-bottom: 3vh;
+
+  li {
+    padding-bottom: 0.5em;
+  }
 `
 
 const StyledHeader = styled.h3`
@@ -42,7 +46,7 @@ const Experience = () => {
       <StyledSubHeader>June 2019 - November 2021</StyledSubHeader>
       <ul>
         <li>
-          Leveraged JavaScript, React, GraphQL, Apollo Server, Semantic UI, and followed the Agile development model to develop and optimized a suite of frontend and backend tools, encompassing API front-ends, chat pages, a password manager, dashboard, and more to enhance a collaborative platform utilized by internal cybersecurity analysts.
+          Leveraged JavaScript, React, GraphQL, Apollo Server, Semantic UI, and followed the Agile development model to develop and optimize a suite of frontend and backend tools, encompassing API front-ends, chat pages, a password manager, dashboard, and more to enhance a collaborative platform utilized by internal cybersecurity analysts.
         </li>
         <li>
           Utilized AWS Lambdas to execute a fusion of SQL queries and C# functions, enabling the manipulation and retrieval of extensive database entries. This process dynamically tailored tens of thousands of records into specific file formats based on user queries.
