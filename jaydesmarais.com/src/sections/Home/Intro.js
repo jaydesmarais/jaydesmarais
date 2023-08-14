@@ -189,10 +189,10 @@ const Intro = () => {
 
       <StyledWarning>
         <h2>
-          I{"'"}m still building and adding to this website!
+          🚧 I'm still constructing this website! 🚧
         </h2>
         <p>
-          Check back for occasional updates and improvements or check the progress on github!
+          Check back for occasional updates and improvements or view my progress on github!
         </p>
         <PrimaryLink href='https://github.com/jaydesmarais/jaydesmarais' target='_blank'>
           Source Code &nbsp;

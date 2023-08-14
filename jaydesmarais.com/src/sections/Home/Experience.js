@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { SiAtandt, SiAmazon } from 'react-icons/si'
 
 const StyledContainer = styled.div`
   position: relative;
@@ -7,42 +8,50 @@ const StyledContainer = styled.div`
   padding-bottom: 3vh;
 `
 
+const StyledHeader = styled.h3`
+  display: flex;
+  align-items: center;
+`
+
+const StyledSubHeader = styled.h4`
+  margin-top: 0;
+`
+
 const Experience = () => {
   return (
     <StyledContainer id="experience">
       <h1>Experience</h1>
       <br />
-      <h3>Amazon</h3>
+      <StyledHeader><SiAmazon size='30' style={{ padding: '0 15px 0 0' }} />Amazon - Software Development Engineer Intern</StyledHeader>
+      <StyledSubHeader>May 2022 - August 2022</StyledSubHeader>
       <ul>
         <li>
-          Completed an assigned full-stack software development project in addition to onboarding, its documentation, handoff, and more during the 12-week internship.
+          Successfully completed a comprehensive full-stack software development project throughout a 12-week internship. This encompassed not only project completion, but also onboarding, meticulous documentation, and seamless handoff procedures.
         </li>
         <li>
-          Revised and improved a page using Typescript and Java that allows clients to inspect, troubleshoot, and manage specific customer payment transaction details.
+          Demonstrated expertise in enhancing a critical page using Typescript and Java, which provided clients with the ability to examine, troubleshoot, and effectively manage specific customer payment transaction details.
         </li>
         <li>
-          Developed and employed a frontend design and APIs that allowed fetching and proper updating of resources from the DynamoDB table.
+          Developed and employed a dynamic frontend design alongside robust APIs, facilitating seamless data retrieval and efficient updates of critical resources directly from the DynamoDB table.
         </li>
         <li>
-          Created and presented a final project to the team and clients to accept feedback and hand off the project and any stretch goals to those taking over any remaining work.
+          Crafted and presented a captivating final presentation of the project to both the internal team and clients. This platform served as an avenue for invaluable feedback incorporation and a smooth transition for the handover of the project, including any ambitious stretch goals, to the designated successors.
         </li>
       </ul>
-      <h3>AT&T</h3>
+      <StyledHeader><SiAtandt size='30' style={{ padding: '0 15px 0 0' }} />AT&T - Associate Cybersecurity Analyst</StyledHeader>
+      <StyledSubHeader>June 2019 - November 2021</StyledSubHeader>
       <ul>
         <li>
-          Designed effective frontend and backend tools including API frontends, chat pages, a password manager, and dashboards using JavaScript, GraphQL, Apollo Server, React, Semantic UI, and the Agile development model to be implemented as features on a collaboration platform utilized by internal cybersecurity analysts.
+          Leveraged JavaScript, React, GraphQL, Apollo Server, Semantic UI, and followed the Agile development model to develop and optimized a suite of frontend and backend tools, encompassing API front-ends, chat pages, a password manager, dashboard, and more to enhance a collaborative platform utilized by internal cybersecurity analysts.
         </li>
         <li>
-          Made use of AWS Lambdas to implement a combination of SQL queries and C# functions that manipulated and returned tens of thousands of database entries in specific file formats based on user queries.
+          Utilized AWS Lambdas to execute a fusion of SQL queries and C# functions, enabling the manipulation and retrieval of extensive database entries. This process dynamically tailored tens of thousands of records into specific file formats based on user queries.
         </li>
         <li>
-          Completed work in a Unix/Linux environment and used git and AWS for code version control.
+          Distinguished myself within a select group of five interns, being the sole individual to be handpicked for continued engagement within the team upon completion of the program.
         </li>
         <li>
-          Partook in an internship program made up of five students and was the only one selected to be brought on to the team after the completion of the program.
-        </li>
-        <li>
-          Collaborated in a shifting workplace by completing tasks individually and in group settings in both in-person and remote environments.
+          Excelled in a flexible work environment, adeptly contributing to tasks both individually and as part of group efforts. Adapted seamlessly to varying work settings, including both in-person and remote engagements, ensuring effective teamwork and successful project outcomes.
         </li>
       </ul>
     </StyledContainer>

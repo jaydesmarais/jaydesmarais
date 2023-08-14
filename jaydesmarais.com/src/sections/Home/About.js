@@ -13,18 +13,18 @@ const About = () => {
       <h1>About</h1>
       <br />
       <p>
-        As a senior in high school, I started taking classes at a local community college to complete an associate's degree in cybersecurity. Having amassed 54 credits while in high school, I continued, completing my associate degree one semester out of high school. From there, I enrolled in the University of Maryland, College Park to continue my education in computer science, where I recently graduated with a bachelor’s degree in computer science and a minor in Real Estate Development.
+        Hi there! 👋🏻 My name is Jay Desmarais! My immersion in the field of computer science began as a junior in high school after deciding to take cybersecurity courses at my local community college. Having amassed 54 college credits prior to high school graduation, I continued to complete my associate's degree in cybersecurity just one semester after high school. Following that, I pursued a more rigorous education at the University of Maryland, College Park. This journey culminated in the successful attainment of a bachelor's degree in computer science, which I complemented with a minor in Real Estate Development.
       </p>
       <p>
-        Throughout my education and experience, I have touched a wide variety of fields within computer science. I have learned about full-stack development, algorithms, UI/UX design, cybersecurity threats and mitigations, and more! Although there is no specific field that I pull most of my motivation from, I find I thrive best in positions in which I get to work to problem solve and utilize solutions from across the many fields I have studied.
+        My educational path has been marked by exploration across a diverse spectrum of computer science disciplines. My proficiency spans full-stack development, algorithmic problem-solving, UI/UX design, and cybersecurity intricacies, among others. This diverse exposure has not only equipped me with versatile skills but has also ignited a passion for solving complex challenges that transcend traditional disciplinary boundaries.
       </p>
       <p>
-        I am an extremely dedicated person and put lots of detail into all of my work. I am constantly learning and enjoy putting any new knowledge to use in my problems or ideas, whether they are in my personal or professional life.
+        My approach to work is defined by meticulous attention to detail and a drive for excellence. Continual learning is the cornerstone of my personal and professional philosophy, and I eagerly apply new insights to my problem-solving capabilities. Whether applied to personal projects or professional endeavors, I derive immense satisfaction from applying the latest knowledge to create innovative solutions.
       </p>
       <p>
-        After graduating from the University of Maryland, College Park, I moved out to Boulder, Colorado to get closer to the mountains, ski resorts, and a more active community. I am extremely excited to start my post-grad life in Colorado and I can't wait to see what opportunities open up!
+        Following my academic achievements, I sought an environment that more closely resonates with my adventurous spirit and active lifestyle. My relocation to the <a style={{ color: 'white' }} href="https://www.bouldercoloradousa.com/travel-info/bouder-happiest-city/#:~:text=National%20Geographic%20and%20the%20%22Today,list%20for%20several%20years%20running." target="_blank" rel="noreferrer">Happiest Place in the US</a>, Boulder, Colorado, reflects this desire, bringing me within view of breathtaking mountains, invigorating <s style={{ color: 'gray' }}>ski</s> snowboard resorts, and a wonderfully active community.
       </p>
-    </StyledContainer>
+    </StyledContainer >
   )
 }
 

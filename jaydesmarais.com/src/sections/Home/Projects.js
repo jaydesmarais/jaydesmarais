@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { PrimaryLink } from 'components/Buttons'
-import { BsGithub, BsFiletypePdf, BsFileEarmarkZip } from 'react-icons/bs'
+import { BsGithub, BsFiletypePdf, BsFileEarmarkZip, BsFillBugFill } from 'react-icons/bs'
 
 const StyledContainer = styled.div`
   position: relative;
@@ -25,6 +25,10 @@ const Projects = () => {
       </h3>
       <p>
         I'm building my own website! To do so, I am using <strong>JavaScript</strong>, <strong>React</strong>, and <strong>CSS</strong> through styled-components. I will continue to iterate and improve on it over the next few weeks while I continue to play with and learn more about interactive and fluid web designs!
+      </p>
+      <p style={{ display: 'flex', alignItems: 'center' }}>
+        <BsFillBugFill size='40' style={{ paddingRight: '20px' }} />
+        As mentioned above, this site is still in progress, so feel free to send me any recommendations or feedback using the contact form below, and please, don't mind my bugs!
       </p>
       <StyledButtonGroup>
         <PrimaryLink href='https://github.com/jaydesmarais/jaydesmarais' target='_blank'>
@@ -59,7 +63,7 @@ const Projects = () => {
         This project is a holistic health and wellness app that was focused on <strong>UI/UX</strong>. Written in <strong>JavaScript</strong>, this project utilizes <strong>React</strong> as a frontend framework and was completed as the final/semester-long project for my Human-Computer Interaction class in my senior year of college.
       </p>
       <p>
-        As a project lead for this project and one of the only members with experience in front-end development, this project taught me a lot about leading a group and how to work around difficulties in experience level and learning style differences as well as differences in work ethic among teammates.
+        As a project lead for this project and one of the only members with experience in front-end development, this project provided me with insights into effective leadership within a team context, while also imparting lessons in navigating challenges arising from variations in experience levels, learning preferences, and work ethic among team members.
       </p>
       <StyledButtonGroup>
         <PrimaryLink href='https://github.com/jaydesmarais/HealthApp' target='_blank'>

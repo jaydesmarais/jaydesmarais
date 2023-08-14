@@ -162,7 +162,7 @@ const Contact = () => {
       <h1>Contact</h1>
       <br />
       <p>
-        I am currently looking for work! If you have a project you want to collaborate on, are expanding your team, or you're just looking for some help, feel free on reach out!
+        I am currently seeking new opportunities! If you have a project in need of collaboration, are growing your team, or simply want to chat, please don't hesitate to get in touch. I'm open and eager to connect!
       </p>
       <StyledFormRow>
         <StyledInput name='name' placeholder='Name' value={name} onChange={(e) => setName(e.target.value)} />
