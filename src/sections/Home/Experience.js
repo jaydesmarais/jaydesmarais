@@ -26,7 +26,17 @@ const Experience = () => {
     <StyledContainer id="experience">
       <h1>Experience</h1>
       <br />
-      <StyledHeader><SiAmazon size='30' style={{ padding: '0 15px 0 0' }} />Amazon - Software Development Engineer Intern</StyledHeader>
+      <StyledHeader>
+        <svg width="0" height="0">
+          <linearGradient id="amazonGrad" x1="0%" y1="80%" x2="0%" y2="50%">
+            <stop offset="0%" style={{ stopColor: "#ff9900", stopOpacity: 1 }} />
+            <stop offset="50%" style={{ stopColor: "white", stopOpacity: 1 }} />
+          </linearGradient>
+        </svg>
+
+        <SiAmazon size='30' style={{ padding: '0 15px 0 0', fill: 'url(#amazonGrad)' }} />
+        Amazon - Software Development Engineer Intern
+      </StyledHeader>
       <StyledSubHeader>May 2022 - August 2022</StyledSubHeader>
       <ul>
         <li>
@@ -42,7 +52,10 @@ const Experience = () => {
           Crafted and presented a captivating final presentation of the project to both the internal team and clients. This platform served as an avenue for invaluable feedback incorporation and a smooth transition for the handover of the project, including any ambitious stretch goals, to the designated successors.
         </li>
       </ul>
-      <StyledHeader><SiAtandt size='30' style={{ padding: '0 15px 0 0' }} />AT&T - Associate Cybersecurity Analyst</StyledHeader>
+      <StyledHeader>
+        <SiAtandt size='30' color='#00A8E0' style={{ padding: '0 15px 0 0' }} />
+        AT&T - Associate Cybersecurity Analyst
+      </StyledHeader>
       <StyledSubHeader>June 2019 - November 2021</StyledSubHeader>
       <ul>
         <li>

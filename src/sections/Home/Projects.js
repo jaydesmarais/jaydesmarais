@@ -27,7 +27,7 @@ const Projects = () => {
         I'm building my own website! To do so, I am using <strong>JavaScript</strong>, <strong>React</strong>, and <strong>CSS</strong> through styled-components. I will continue to iterate and improve on it over the next few weeks while I continue to play with and learn more about interactive and fluid web designs!
       </p>
       <p style={{ display: 'flex', alignItems: 'center' }}>
-        <BsFillBugFill size='40' style={{ paddingRight: '20px' }} />
+        <BsFillBugFill size='40' color='lightgreen' style={{ paddingRight: '20px' }} />
         As mentioned above, this site is still in progress, so feel free to send me any recommendations or feedback using the contact form below, and please, don't mind my bugs!
       </p>
       <StyledButtonGroup>
