@@ -41,7 +41,7 @@ const socialLinks = [
 const Footer = () => {
   return (
     <StyledContainer>
-
+      {/* Linkedin logo svg background gradient */}
       <svg width="0" height="0">
         <linearGradient id="linkedinGrad" y1="100%">
           <stop offset="0%" style={{ stopColor: "#0077B5" }} />
@@ -49,6 +49,7 @@ const Footer = () => {
         </linearGradient>
       </svg>
 
+      {/* Github logo svg background gradient */}
       <svg width="0" height="0">
         <linearGradient id="githubGrad" y1="100%">
           <stop offset="0%" style={{ stopColor: "gray" }} />
@@ -56,6 +57,7 @@ const Footer = () => {
         </linearGradient>
       </svg>
 
+      {/* Instagram logo svg background gradient */}
       <svg width="0" height="0">
         <radialGradient id="instagramGrad" r="150%" cx="30%" cy="107%">
           <stop stop-color="#fdf497" offset="0%" />
@@ -66,6 +68,7 @@ const Footer = () => {
         </radialGradient>
       </svg>
 
+      {/* Email logo svg background gradient */}
       <svg width="0" height="0">
         <linearGradient id="emailGrad" y1="100%">
           <stop offset="0%" style={{ stopColor: "#5DC3F7" }} />
@@ -73,6 +76,7 @@ const Footer = () => {
         </linearGradient>
       </svg>
 
+      {/* Text Message logo svg background gradient */}
       <svg width="0" height="0">
         <linearGradient id="textGrad" y1="100%">
           <stop offset="0%" style={{ stopColor: "#8AF485" }} />

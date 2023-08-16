@@ -5,6 +5,25 @@ import Home from 'pages/Home'
 import Resume from 'pages/Resume'
 import NotFound from 'pages/NotFound'
 
+/* 
+  Renders app components based on the browser route.
+
+  Parent:
+    '/' | <Layout>
+      - Home path to which child route element is passed as an '<Outlet>'
+      - Contains layout elements like navbar and footer as well as overall styling
+  
+  Children:
+    '/' (index) | <Home/>
+      - The front page of the site where most of the content lies
+    '/home | <Home/>
+      - Another alias for '/'
+    '/resume' | <Resume/>
+      - A page rendered with a resume
+    '*' | <NotFound/>
+      - Cath-All 404 error not found page
+      - Gives user option to return to home
+*/
 const App = () => {
   return (
     <Routes>

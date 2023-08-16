@@ -14,7 +14,9 @@ const StyledButtonGroup = styled.div`
   flex-wrap: wrap;
   text-align: center;
 `
-
+/*
+  Personal Projects
+*/
 const Projects = () => {
   return (
     <StyledContainer id="projects">

@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const StyledContainer = styled.div`
-  min-height: 100vh;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const StyledTitle = styled.h1`
@@ -14,6 +18,7 @@ const StyledSubtitle = styled.h3`
   text-align: center;
 `;
 
+// Lost 404 content for home page
 const Lost404 = () => {
   return (
     <>

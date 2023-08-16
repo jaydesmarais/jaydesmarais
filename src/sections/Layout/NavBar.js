@@ -56,6 +56,7 @@ const NavBar = ({ location }) => {
       <StyledNavBar>
         <StyledLinkList>
           {location && location.pathname === "/" ? navLinks.map(({ name, link, offset }, i) => {
+            // Navbar and links displayed at "/"
             return (
               <StyledLink key={i}>
                 <ScrollLink to={link} spy={true} hashSpy={true} smooth={true} offset={offset}>
@@ -64,6 +65,7 @@ const NavBar = ({ location }) => {
               </StyledLink>
             )
           }) : backLinks.map(({ name, link }, i) => {
+            // Navbar and links displayed on all pages other than "/"
             return (
               <StyledLink key={i}>
                 <NavLink to={link}>

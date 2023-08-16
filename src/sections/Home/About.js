@@ -7,6 +7,7 @@ const StyledContainer = styled.div`
   padding-bottom: 3vh;
 `
 
+// About section for home page
 const About = () => {
   return (
     <StyledContainer id="about">

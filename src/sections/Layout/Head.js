@@ -1,6 +1,7 @@
 import React from 'react'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 
+// Manages changes to document head
 const Head = () => {
   return (
     <HelmetProvider>
