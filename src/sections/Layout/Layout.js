@@ -53,31 +53,37 @@ const Layout = () => {
 
   return (
     <>
+      {/* React Helmet Wrapper for site metadata */}
       <Head />
+
+      {/* Styling applied to the site as a whole */}
       <GlobalStyle />
 
       <StyledContainer>
-
+        {/* NavBar rendered on larger screens */}
         <NavBar location={location} />
+        {/* NavMenu rendered on smaller screens */}
         <NavMenu location={location} />
 
         <StyledChildren>
           <StyledLeftChild>
+            {/* Left sidebar area for larger screens */}
             <LeftSideBar />
           </StyledLeftChild>
           <StyledMiddleChild>
+            {/* Child element passed from the nested <Route> */}
             <Outlet />
           </StyledMiddleChild>
           <StyledRightChild>
+            {/* Right sidebar area for larger screens */}
             <RightSideBar />
           </ StyledRightChild>
         </StyledChildren>
 
+        {/* Footer element displayed at bottom of all pages */}
         <Footer />
-
       </StyledContainer>
     </>
-
   )
 }
 

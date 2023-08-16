@@ -21,6 +21,7 @@ const StyledSubHeader = styled.h4`
   margin-top: 0;
 `
 
+// Experience section for home page
 const Experience = () => {
   return (
     <StyledContainer id="experience">

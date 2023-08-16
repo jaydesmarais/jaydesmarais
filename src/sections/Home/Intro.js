@@ -159,6 +159,7 @@ const StyledScrollArrow = styled.div`
   }
 `
 
+// Intro section for home page
 const Intro = () => {
   return (
     <StyledContainer id="intro">

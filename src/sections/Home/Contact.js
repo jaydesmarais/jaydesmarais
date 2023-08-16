@@ -57,12 +57,14 @@ const StyledCaptcha = styled.div`
   margin: 0 1vw;
 `
 
+// Form submission status enum
 const Status = {
   Unsubmitted: 0,
   Sending: 1,
   Complete: 2
 }
 
+// Contact form for home page
 const Contact = () => {
   const [status, setStatus] = useState(Status.Unsubmitted)
   const [warning, setWarning] = useState('')
@@ -74,6 +76,7 @@ const Contact = () => {
   const captchaRef = useRef(null)
 
   const validateInput = () => {
+    // Verify all input is valid in some shape or form and set a warning accordingly if invalid
     if (name && email && subject && message) {
       if (name.length < 2) {
         setWarning('Please make sure you enter your full name so I know who is reaching out!')
@@ -97,6 +100,16 @@ const Contact = () => {
     return false;
   }
 
+  /*
+    Handles submission of contact form (async)
+    
+    Props: None
+    Side Effects:
+      - Sets warning based on status of submission and input fields
+      - Checks captcha for human-ness
+      - Sends message and params to emailjs to fulfill template-specific request
+      - Updates contact form submission status accordingly
+  */
   const handleSubmit = async () => {
     if (status === Status.Unsubmitted) {
       if (validateInput()) {
@@ -129,6 +142,7 @@ const Contact = () => {
     }
   }
 
+  // Content of submit button based on submission status
   const submitButtonContent = () => {
     switch (status) {
       case Status.Unsubmitted:
@@ -151,6 +165,7 @@ const Contact = () => {
     }
   }
 
+  // Clears form warning on form completion
   useEffect(() => {
     if (name && email && subject && message) {
       setWarning("")
