@@ -50,34 +50,48 @@ const StyledLink = styled.li`
 `
 
 const NavBar = ({ location }) => {
+  switch (location.pathname) {
+    case "/":
+      // NavBar and links displayed at '/'
+      return (
+        <StyledNavBar>
+          <StyledLinkList>
+            {navLinks.map(({ name, link, offset }, i) => {
+              return (
+                <StyledLink key={i}>
+                  <ScrollLink to={link} spy={true} hashSpy={true} smooth={true} offset={offset}>
+                    {name}
+                  </ScrollLink>
+                </StyledLink>
+              )
+            })}
+          </StyledLinkList >
+        </StyledNavBar>
+      )
+    // NavBar and links displayed at '/resume'
+    case "/resume":
+      return (
+        <StyledNavBar>
+          <StyledLinkList>
+            {backLinks.map(({ name, link }, i) => {
+              return (
+                <StyledLink key={i}>
+                  <NavLink to={link}>
+                    {name}
+                  </NavLink>
+                </StyledLink>
+              )
+            })}
+          </StyledLinkList >
+        </StyledNavBar>
 
-  return (
-    <>
-      <StyledNavBar>
-        <StyledLinkList>
-          {location && location.pathname === "/" ? navLinks.map(({ name, link, offset }, i) => {
-            // Navbar and links displayed at "/"
-            return (
-              <StyledLink key={i}>
-                <ScrollLink to={link} spy={true} hashSpy={true} smooth={true} offset={offset}>
-                  {name}
-                </ScrollLink>
-              </StyledLink>
-            )
-          }) : backLinks.map(({ name, link }, i) => {
-            // Navbar and links displayed on all pages other than "/"
-            return (
-              <StyledLink key={i}>
-                <NavLink to={link}>
-                  {name}
-                </NavLink>
-              </StyledLink>
-            )
-          })}
-        </StyledLinkList>
-      </StyledNavBar >
-    </>
-  )
+      )
+    // NavBar links displayed by default
+    default:
+      return (
+        <></>
+      )
+  }
 }
 
 NavBar.propTypes = {

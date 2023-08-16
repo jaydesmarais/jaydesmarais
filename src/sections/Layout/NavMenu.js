@@ -23,10 +23,10 @@ const StyledNavMenu = styled.nav`
 `
 
 const StyledMenuButton = styled.button`
-  color: white;
   display: none;
 
   @media (max-width: 720px) {
+    color: white;
     display: flex;
     position: fixed;
     cursor: pointer;
@@ -89,36 +89,51 @@ const NavMenu = ({ location }) => {
 
   return (
     <>
-      <StyledMenuButton>
-        {menuOpen
-          ? <BsXLg size='50' onClick={() => setMenuOpen(!menuOpen)} />
-          : <BsList size='50' onClick={() => setMenuOpen(!menuOpen)} />
-        }
-      </StyledMenuButton>
+      {location && (location.pathname === '/' || location.pathname === '/resume') ?
+        // NavMenu displayed on '/' and '/resume'
+        <>
+          {/* NavMenu hamburger menu and button to close expanded menu */}
+          < StyledMenuButton >
+            {
+              menuOpen
+                ? <BsXLg size='50' onClick={() => setMenuOpen(!menuOpen)} />
+                : <BsList size='50' onClick={() => setMenuOpen(!menuOpen)} />
+            }
+          </StyledMenuButton >
 
-      {menuOpen ?
-        <StyledNavMenu onClick={() => setMenuOpen(false)}>
-          <StyledLinkList>
-            {location && location.pathname === "/" ? navLinks.map(({ name, link }, i) => {
-              return (
-                <StyledLink key={i}>
-                  <ScrollLink to={link} onClick={() => setMenuOpen(false)} spy={true} hashSpy={true} smooth={true}>
-                    {name}
-                  </ScrollLink>
-                </StyledLink>
-              )
-            }) : backLinks.map(({ name, link }, i) => {
-              return (
-                <StyledLink key={i}>
-                  <NavLink to={link} onClick={() => setMenuOpen(false)}>
-                    {name}
-                  </NavLink>
-                </StyledLink>
-              )
-            })}
-          </StyledLinkList>
-        </StyledNavMenu >
+          {/* NavMenu links and pop-out */}
+          {
+            menuOpen ?
+              <StyledNavMenu onClick={() => setMenuOpen(false)}>
+                <StyledLinkList>
+                  {location && location.pathname === '/' ? navLinks.map(({ name, link }, i) => {
+                    // NavMenu and links displayed on '/'
+                    return (
+                      <StyledLink key={i}>
+                        <ScrollLink to={link} onClick={() => setMenuOpen(false)} spy={true} hashSpy={true} smooth={true}>
+                          {name}
+                        </ScrollLink>
+                      </StyledLink>
+                    )
+                  }) : backLinks.map(({ name, link }, i) => {
+                    // NavMenu and links displayed at '/resume'
+                    return (
+                      <StyledLink key={i}>
+                        <NavLink to={link} onClick={() => setMenuOpen(false)}>
+                          {name}
+                        </NavLink>
+                      </StyledLink>
+                    )
+                  })
+                  }
+                </StyledLinkList >
+              </StyledNavMenu >
+              :
+              <></>
+          }
+        </>
         :
+        // No NavMenu displayed on pages other than "/" and "/resume"
         <></>
       }
     </>
