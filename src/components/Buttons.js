@@ -3,12 +3,8 @@ import { Link } from 'react-router-dom'
 
 // <a> link button that follows site button style.
 export const PrimaryLink = styled.a`
-  position: relative;
-  display: flex;
-  justify-content: center;
   flex: auto;
   min-width: 100px;
-  overflow: auto;
   border: 2px solid white;
   border-radius: 10px;
   color: white;

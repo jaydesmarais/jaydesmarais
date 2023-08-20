@@ -9,6 +9,7 @@ export const Section = styled.div`
   margin: auto;
   padding-top: 10vh;
   height: auto;
+  overflow: hidden;
 
   &.intro {
     display: flex;
@@ -35,6 +36,7 @@ export const Section = styled.div`
 `
 
 export const SectionContainer = styled.div`
+  max-width: 1080px;
   width: 75vw;
 `
 

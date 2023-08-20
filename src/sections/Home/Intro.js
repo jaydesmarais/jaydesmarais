@@ -1,10 +1,11 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import PrimaryLink from 'components/Buttons'
 import { BsGithub, BsFiletypePdf } from 'react-icons/bs'
 import { PrimaryRouteLink } from 'components/Buttons'
 import Headshot from 'images/headshot.png'
 import { Section, SectionContainer, SectionHeader, SectionSubHeader, SectionText } from 'components/Section'
+import { Parallax } from 'react-scroll-parallax'
+import { Warning, WarningText } from 'components/Warning'
 
 const StyledIntro = styled.div`
   position: relative;
@@ -79,32 +80,17 @@ const StyledImage = styled.img`
   }
 `
 
-const StyledWarning = styled.div`
-  width: calc(100% - 40px);
-  padding: 20px;
-  position: relative;
-  margin-top: 10vh;
-  text-align: center;
-  border-radius: 10px;
-  background-color: rgba(50,50,50,.9);
-
-  @media (max-width: 1080px){
-    margin: 1em auto;
-  }
-`
-
 const scrollAnimation = keyframes`
   0% { opacity: 1; }
   100% { opacity: 0; transform: translate(-10px, -10px) }
 `
 
 const StyledScrollArrow = styled.div`
-  display: block;
   position: relative;
-  margin: 10vh auto 0;
+  margin: 0 auto 40px;
   width: 40px;
   height: 40px;
-  transform: rotate(45deg) translateX(-20px);
+  transform: rotate(45deg);
   border-left: none;
   border-top: none;
   border-right: 2px #fff solid;
@@ -159,20 +145,27 @@ const Intro = () => {
             </StyledImageContainer>
           </StyledContent>
         </StyledIntro>
+      </SectionContainer>
 
-        <StyledWarning>
-          <h2>
-            🚧 I'm still constructing this website! 🚧
-          </h2>
-          <p>
-            Check back for occasional updates and improvements or view my progress on github!
-          </p>
-          <PrimaryLink href='https://github.com/jaydesmarais/jaydesmarais' target='_blank'>
-            Source Code &nbsp;
-            <BsGithub size={20} />
-          </PrimaryLink>
-        </StyledWarning>
+      <Parallax translateY={[-3, 3]} translateX={[-5, 5]}>
+        <Warning className='left'>
+          <WarningText>
+            {[...Array(5)].map((e, i) => <div>Site Under Construction</div>)}
+          </WarningText>
+        </Warning>
+      </Parallax>
 
+      <Parallax translateY={[-50, -10]} translateX={[10, -5]}>
+        <Warning className='right'>
+          <WarningText>
+            {[...Array(5)].map((e, i) => <div style={{ display: 'flex', alignItems: 'center' }}>Updates weekly &nbsp;
+              <BsGithub size={20} /></div>)}
+
+          </WarningText>
+        </Warning>
+      </Parallax>
+
+      <SectionContainer>
         <StyledScrollArrow />
       </SectionContainer>
 

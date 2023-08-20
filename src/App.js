@@ -31,7 +31,7 @@ const App = () => {
 
   WebFont.load({
     google: {
-      families: ['Unbounded']
+      families: ['Unbounded, Quicksand, Bebes Neue, Anton, Space Grotesk, Fjalla One, Abril Fatface, DM Serif Display, Questrial, Righteous, Ultra, Athiti, Gilda Display, Syncopate, Chonburi, Rozha One, Shippori Mincho B1, Judson, Trocchi, Italiana, Yeseva One, Bricolage Grotesque']
     }
   });
 
