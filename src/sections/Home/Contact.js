@@ -2,15 +2,10 @@ import React, { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components'
 import { BsFillSendFill, BsFillSendCheckFill } from 'react-icons/bs'
 import { PrimaryButton } from 'components/Buttons'
+import { Section, SectionContainer, SectionHeader, SectionText } from 'components/Section'
 import emailjs from '@emailjs/browser';
 import ReCAPTCHA from "react-google-recaptcha";
 import validator from 'validator';
-
-const StyledContainer = styled.div`
-  position: relative;
-  padding-top: 7vh;
-  padding-bottom: 3vh;
-`
 
 const StyledFormRow = styled.div`
   display: flex;
@@ -173,37 +168,39 @@ const Contact = () => {
   }, [name, email, subject, message])
 
   return (
-    <StyledContainer id="contact" >
-      <h1>Contact</h1>
-      <br />
-      <p>
-        I am currently seeking new opportunities! If you have a project in need of collaboration, are growing your team, or simply want to chat, please don't hesitate to get in touch. I'm open and eager to connect!
-      </p>
-      <StyledFormRow>
-        <StyledInput name='name' placeholder='Name' value={name} onChange={(e) => setName(e.target.value)} />
-        <StyledInput name='email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
-        <StyledInput name='subject' placeholder='Subject' value={subject} onChange={(e) => setSubject(e.target.value)} />
-      </StyledFormRow>
-      <StyledFormRow>
-        <StyledTextArea name='message' placeholder='Message' value={message} onChange={(e) => setMessage(e.target.value)} />
-      </StyledFormRow>
-      <StyledFormRow>
-        <PrimaryButton type="button" status={status} onClick={() => handleSubmit()}>
-          {submitButtonContent()}
-        </PrimaryButton>
-      </StyledFormRow>
-      <StyledCaptcha>
-        <ReCAPTCHA style={{ visibility: 'hidden' }} sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY} ref={captchaRef} badge="bottomright" size="invisible" theme="dark" />
-        This site is protected by reCAPTCHA and the Google &nbsp;
-        <a href="https://policies.google.com/privacy">Privacy Policy</a> and &nbsp;
-        <a href="https://policies.google.com/terms">Terms of Service</a> apply.
-      </StyledCaptcha>
-      <StyledWarning>
-        {warning &&
-          <>{warning}</>
-        }
-      </StyledWarning>
-    </StyledContainer >
+    <Section className='contact'>
+      <SectionContainer>
+        <SectionHeader>Contact</SectionHeader>
+        <br />
+        <SectionText>
+          I am currently seeking new opportunities! If you have a project in need of collaboration, are growing your team, or simply want to chat, please don't hesitate to get in touch. I'm open and eager to connect!
+        </SectionText>
+        <StyledFormRow>
+          <StyledInput name='name' placeholder='Name' value={name} onChange={(e) => setName(e.target.value)} />
+          <StyledInput name='email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+          <StyledInput name='subject' placeholder='Subject' value={subject} onChange={(e) => setSubject(e.target.value)} />
+        </StyledFormRow>
+        <StyledFormRow>
+          <StyledTextArea name='message' placeholder='Message' value={message} onChange={(e) => setMessage(e.target.value)} />
+        </StyledFormRow>
+        <StyledFormRow>
+          <PrimaryButton type="button" status={status} onClick={() => handleSubmit()}>
+            {submitButtonContent()}
+          </PrimaryButton>
+        </StyledFormRow>
+        <StyledCaptcha>
+          <ReCAPTCHA style={{ visibility: 'hidden' }} sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY} ref={captchaRef} badge="bottomright" size="invisible" theme="dark" />
+          This site is protected by reCAPTCHA and the Google &nbsp;
+          <a href="https://policies.google.com/privacy">Privacy Policy</a> and &nbsp;
+          <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+        </StyledCaptcha>
+        <StyledWarning>
+          {warning &&
+            <>{warning}</>
+          }
+        </StyledWarning>
+      </SectionContainer>
+    </Section >
   )
 }
 

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 // <a> link button that follows site button style.
 export const PrimaryLink = styled.a`
-  font-size: medium;
   position: relative;
   display: flex;
   justify-content: center;

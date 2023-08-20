@@ -1,11 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-
-const StyledContainer = styled.div`
-  position: relative;
-  padding-top: 10vh;
-  height: 65vh;
-`
+import { Section, SectionContainer } from 'components/Section'
 
 const StyledIframe = styled.iframe`
     display: inline-flex;
@@ -16,10 +11,12 @@ const StyledIframe = styled.iframe`
 
 const Resume = () => {
   return (
-    <StyledContainer>
-      <h1>Resume</h1>
-      <StyledIframe title='resume' src="https://jaydesmarais.s3.us-east-2.amazonaws.com/Jay+Desmarais+-+Resume.pdf" width="100%" height="vh" />
-    </StyledContainer>
+    <Section className='resume'>
+      <SectionContainer>
+        <h1>Resume</h1>
+        <StyledIframe title='resume' src="https://jaydesmarais.s3.us-east-2.amazonaws.com/Jay+Desmarais+-+Resume.pdf" width="100%" height="vh" />
+      </SectionContainer>
+    </Section>
   )
 }
 

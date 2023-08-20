@@ -48,7 +48,6 @@ const StyledLinkList = styled.ul`
   border-radius: 10px;
   list-style: none;
   max-width: 70%;
-  font-size: larger;
 `
 
 const StyledLink = styled.li`
@@ -79,6 +78,7 @@ const NavMenu = ({ location }) => {
 
   const [menuOpen, setMenuOpen] = useState(false)
 
+  // Close the menu when the window is resized
   const handleResize = () => {
     if (menuOpen && window.innerWidth >= 720) {
       setMenuOpen(false)

@@ -4,16 +4,7 @@ import PrimaryLink from 'components/Buttons'
 import { BsGithub, BsFiletypePdf } from 'react-icons/bs'
 import { PrimaryRouteLink } from 'components/Buttons'
 import Headshot from 'images/headshot.png'
-
-const StyledContainer = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 10vh 0;
-  width: 100%;
-  min-height: 75vh;
-`
+import { Section, SectionContainer, SectionHeader, SectionSubHeader, SectionText } from 'components/Section'
 
 const StyledIntro = styled.div`
   position: relative;
@@ -32,27 +23,7 @@ const StyledContent = styled.div`
   flex: 1;
 `
 
-const StyledHeader = styled.h1`
-  margin-top: 0;
-  font-size: 400%;
-  text-align: left;
-
-  @media (max-width: 720px) {
-    font-size: 300%;
-  }
-`
-
-const StyledSubHeader = styled.h3`
-  margin-bottom: 1vh;
-  text-align: left;
-`
-
-const StyledText = styled.p`
-  text-align: left;
-`
-
 const StyledImageContainer = styled.div`
-  display: inline-block;
   position: relative;
 
   &:before {
@@ -109,8 +80,10 @@ const StyledImage = styled.img`
 `
 
 const StyledWarning = styled.div`
-  margin-top: 10vh;
+  width: calc(100% - 40px);
   padding: 20px;
+  position: relative;
+  margin-top: 10vh;
   text-align: center;
   border-radius: 10px;
   background-color: rgba(50,50,50,.9);
@@ -126,12 +99,12 @@ const scrollAnimation = keyframes`
 `
 
 const StyledScrollArrow = styled.div`
+  display: block;
   position: relative;
-  margin: auto;
-  top: 10vh;
+  margin: 10vh auto 0;
   width: 40px;
   height: 40px;
-  transform: rotate(45deg);
+  transform: rotate(45deg) translateX(-20px);
   border-left: none;
   border-top: none;
   border-right: 2px #fff solid;
@@ -162,48 +135,48 @@ const StyledScrollArrow = styled.div`
 // Intro section for home page
 const Intro = () => {
   return (
-    <StyledContainer id="intro">
-      <StyledIntro>
-        <StyledContent>
-          <StyledHeader>
-            Jay Desmarais
-          </StyledHeader>
-          <StyledSubHeader>
-            I design and build things for the web
-          </StyledSubHeader>
-          <StyledText>
-            I{"'"}m a software engineer with a wide range of experience and education in the realms of full-stack programming, algorithms, UI/UX, cybersecurity, and more, which I pull from to design and build solutions to complex problems.
-          </StyledText>
-          <PrimaryRouteLink to="/resume" style={{ textDecoration: 'none' }}>
-            Check out my Resume &nbsp;
-            <BsFiletypePdf size={20} />
-          </PrimaryRouteLink>
-        </StyledContent>
-        <StyledContent className='image'>
-          <StyledImageContainer>
-            <StyledImage src={Headshot} alt='headshot' />
-          </StyledImageContainer>
-        </StyledContent>
+    <Section className='intro'>
+      <SectionContainer>
+        <StyledIntro>
+          <StyledContent>
+            <SectionHeader className='intro'>
+              Jay Desmarais
+            </SectionHeader>
+            <SectionSubHeader>
+              I design and build things for the web
+            </SectionSubHeader>
+            <SectionText>
+              I{"'"}m a software engineer with a wide range of experience and education in the realms of full-stack programming, algorithms, UI/UX, cybersecurity, and more, which I pull from to design and build solutions to complex problems.
+            </SectionText>
+            <PrimaryRouteLink to="/resume" style={{ textDecoration: 'none' }}>
+              Check out my Resume &nbsp;
+              <BsFiletypePdf size={20} />
+            </PrimaryRouteLink>
+          </StyledContent>
+          <StyledContent className='image'>
+            <StyledImageContainer>
+              <StyledImage src={Headshot} alt='headshot' />
+            </StyledImageContainer>
+          </StyledContent>
+        </StyledIntro>
 
+        <StyledWarning>
+          <h2>
+            🚧 I'm still constructing this website! 🚧
+          </h2>
+          <p>
+            Check back for occasional updates and improvements or view my progress on github!
+          </p>
+          <PrimaryLink href='https://github.com/jaydesmarais/jaydesmarais' target='_blank'>
+            Source Code &nbsp;
+            <BsGithub size={20} />
+          </PrimaryLink>
+        </StyledWarning>
 
-      </StyledIntro>
+        <StyledScrollArrow />
+      </SectionContainer>
 
-      <StyledWarning>
-        <h2>
-          🚧 I'm still constructing this website! 🚧
-        </h2>
-        <p>
-          Check back for occasional updates and improvements or view my progress on github!
-        </p>
-        <PrimaryLink href='https://github.com/jaydesmarais/jaydesmarais' target='_blank'>
-          Source Code &nbsp;
-          <BsGithub size={20} />
-        </PrimaryLink>
-      </StyledWarning>
-
-      <StyledScrollArrow />
-
-    </StyledContainer >
+    </Section >
   )
 }
 
