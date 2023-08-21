@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom'
 
 // <a> link button that follows site button style.
 export const PrimaryLink = styled.a`
+font-size: medium;
   flex: auto;
   min-width: 100px;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 10px;
   color: white;
-  margin: 1em 1vw;
-  padding: 1em 2vw;
+  margin: .5em 1vw;
+  padding: .5em 2vw;
   cursor: pointer;
   text-decoration: none;
 
@@ -29,11 +30,11 @@ export const PrimaryButton = styled.button`
   flex: auto;
   min-width: 100px;
   overflow: auto;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 10px;
   color: white;
-  margin: 1em 1vw;
-  padding: 1em 2vw;
+  margin: .5em 1vw;
+  padding: .5em 2vw;
   cursor: pointer;
   background-color: black;
   text-decoration: none;
@@ -51,15 +52,15 @@ export const PrimaryButton = styled.button`
 `
 
 // react-router-dom <Link> that follows site button style.
-export const PrimaryRouteLink = styled(Link)`
+export const StyledLink = styled(Link)`
   font-size: medium;
   display: flex;
+  align-items: center;
   justify-content: center;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 10px;
   color: white;
-  margin: 1em 1vw;
-  padding: 1em 2vw;
+  padding: 0.5em;
 
   &:hover {
     background-color: white;

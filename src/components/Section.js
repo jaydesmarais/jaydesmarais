@@ -7,13 +7,12 @@ export const Section = styled.div`
   flex-direction: column;
   align-items: center;
   margin: auto;
-  padding-top: 10vh;
   height: auto;
   overflow: hidden;
 
   &.intro {
     display: flex;
-    min-height: 80vh;
+    min-height: 100vh;
     justify-content: center;
   }
 
@@ -37,14 +36,23 @@ export const Section = styled.div`
 
 export const SectionContainer = styled.div`
   max-width: 1080px;
-  width: 75vw;
+  width: 100vw;
+
+  &.scroll{
+    background-color: black;
+  }
 `
 
 export const SectionHeader = styled.h1`
+  margin: 0;
+  padding-top: 10vh;
+  padding-bottom: 5vh;
+  z-index: 100;
+  font-size: 600%;
+
   &.intro {
-    margin-top: 0;
-    font-size: 400%;
-    text-align: left;
+    font-size: 600%;
+    text-align: center;
 
     @media (max-width: 720px) {
       font-size: 300%;
@@ -53,6 +61,20 @@ export const SectionHeader = styled.h1`
 `
 
 export const SectionSubHeader = styled.h3`
+  margin: 0;
+  font-size: 225%;
+
+  &.intro {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    padding: 4vh;
+    text-align: center;
+
+    @media (max-width: 720px) {
+      font-size: 150%;
+    }
+  }
+
   &.logo {
     display: flex;
     align-items: center;

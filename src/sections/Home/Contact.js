@@ -28,8 +28,8 @@ const StyledInput = styled.input`
   border: 2px solid white;
   border-radius: 10px;
   background-color: black;
-  margin: 1em 1vw;
-  padding: 1em 2vw;
+  margin: .5em 1vw;
+  padding: .5em 2vw;
 `
 
 const StyledTextArea = styled.textarea`
@@ -39,8 +39,8 @@ const StyledTextArea = styled.textarea`
   border: 2px solid white;
   border-radius: 10px;
   background-color: black;
-  margin: 1em 1vw;
-  padding: 1em 2vw;
+  margin: .5em 1vw;
+  padding: .5em 2vw;
   height: 200px;
 `
 

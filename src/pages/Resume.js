@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import { Section, SectionContainer } from 'components/Section'
+import { Section, SectionContainer, SectionHeader } from 'components/Section'
 
 const StyledIframe = styled.iframe`
     display: inline-flex;
@@ -13,7 +13,7 @@ const Resume = () => {
   return (
     <Section className='resume'>
       <SectionContainer>
-        <h1>Resume</h1>
+        <SectionHeader>Resume</SectionHeader>
         <StyledIframe title='resume' src="https://jaydesmarais.s3.us-east-2.amazonaws.com/Jay+Desmarais+-+Resume.pdf" width="100%" height="vh" />
       </SectionContainer>
     </Section>
