@@ -16,6 +16,11 @@ export const Section = styled.div`
     justify-content: center;
   }
 
+  &.about {
+    display: flex;
+    justify-content: center;
+  }
+
   &.resume {
     min-height: 65vh;
   }
@@ -35,8 +40,8 @@ export const Section = styled.div`
 `
 
 export const SectionContainer = styled.div`
-  max-width: 1080px;
-  width: 100vw;
+  max-width: 1440px;
+  width: 90%;
 
   &.scroll{
     background-color: black;

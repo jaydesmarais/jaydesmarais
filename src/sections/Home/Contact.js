@@ -25,7 +25,7 @@ const StyledInput = styled.input`
   font-size: medium;
   color: white;
   flex: auto;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 10px;
   background-color: black;
   margin: .5em 1vw;
@@ -36,7 +36,7 @@ const StyledTextArea = styled.textarea`
   font-size: medium;
   color: white;
   flex: auto;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 10px;
   background-color: black;
   margin: .5em 1vw;

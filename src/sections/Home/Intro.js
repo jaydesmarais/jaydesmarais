@@ -43,8 +43,8 @@ const StyledScrollArrow = styled.div`
   transform: rotate(45deg);
   border-left: none;
   border-top: none;
-  border-right: 2px #fff solid;
-  border-bottom: 2px #fff solid;
+  border-right: 1px #fff solid;
+  border-bottom: 1px #fff solid;
   background-color: black;
 
   &:before {
