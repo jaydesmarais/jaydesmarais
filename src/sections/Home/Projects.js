@@ -16,8 +16,6 @@ const Projects = () => {
     <Section>
       <SectionContainer>
         <SectionHeader>Projects</SectionHeader>
-
-        <br />
         <SectionSubHeader>
           JayDesmarais.com - My Personal Website!
         </SectionSubHeader>

@@ -38,8 +38,10 @@ const CarouselCell = styled.div`
   width: 780px;
   height: 520px;
   transition: transform 1s, opacity 1s;
-  background: rgba(50,50,50,.9);
-  border-radius: 0px;
+  background: rgba(0,0,0,.9);
+  border: 1px solid white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #fff;
 
   // 
   &:nth-child(1) { transform: rotateY(  0deg) translateZ(850px); }

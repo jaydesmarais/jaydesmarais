@@ -19,6 +19,7 @@ export const Section = styled.div`
   &.about {
     display: flex;
     justify-content: center;
+    overflow: hidden;
   }
 
   &.resume {

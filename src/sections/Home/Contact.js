@@ -16,7 +16,6 @@ const StyledFormRow = styled.div`
 const StyledWarning = styled.div`
   padding: 1vh 2vw;
   text-align: center;
-  border-radius: 10px;
   color: red;
   height: 2vh;
 `
@@ -171,7 +170,6 @@ const Contact = () => {
     <Section className='contact'>
       <SectionContainer>
         <SectionHeader>Contact</SectionHeader>
-        <br />
         <SectionText>
           I am currently seeking new opportunities! If you have a project in need of collaboration, are growing your team, or simply want to chat, please don't hesitate to get in touch. I'm open and eager to connect!
         </SectionText>

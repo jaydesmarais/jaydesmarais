@@ -12,7 +12,6 @@ const StyledSocialIcons = styled.a`
   &:hover {
     background-color: white;
     color: black;
-    border-radius: 10px
   }
 `
 

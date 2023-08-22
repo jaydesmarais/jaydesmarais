@@ -83,7 +83,7 @@ const Intro = () => {
               I design and build things for the web
             </SectionSubHeader>
             <SectionText>
-              I{"'"}m a software engineer based in Boulder, CO with a wide range of experience and education in the realms of full-stack programming, algorithms, UI/UX, cybersecurity, and more, which I pull from to design and build solutions to complex problems.
+              I{"'"}m a software engineer based in Boulder, CO with a wide range of experience and education in the realms of full-stack programming, UI/UX, algorithms, AI, ML, cybersecurity, and more, which I pull from to design and build solutions to complex problems.
             </SectionText>
             <StyledLink to="/resume" style={{ textDecoration: 'none' }}>
               Check out my Resume &nbsp;

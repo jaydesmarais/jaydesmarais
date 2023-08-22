@@ -31,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
   h6,
   p,
   strong,
-  ul {
+  li {
     color: white;
   }
 `;
