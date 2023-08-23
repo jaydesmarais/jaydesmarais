@@ -89,7 +89,9 @@ const LogoCover = styled.div`
   align-items: center;
   border-radius: 10px;
   border: 1px white solid;
-  box-shadow: 0px 0px 10px #fff;
+  box-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff;
   z-index: -1000;
 `
 

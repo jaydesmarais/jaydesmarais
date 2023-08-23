@@ -27,7 +27,7 @@ const StyledLinkList = styled.ul`
   list-style: none;
 `
 
-const StyledLink = styled.li`
+const InternalLink = styled.li`
   color: rgba(255,255,255,.9);
 
   a {
@@ -58,11 +58,11 @@ const NavBar = ({ location }) => {
           <StyledLinkList>
             {navLinks.map(({ name, link }, i) => {
               return (
-                <StyledLink key={i}>
+                <InternalLink key={i}>
                   <ScrollLink to={name} spy={true} hashSpy={true} smooth={true}>
                     {link}
                   </ScrollLink>
-                </StyledLink>
+                </InternalLink>
               )
             })}
           </StyledLinkList >
@@ -75,11 +75,11 @@ const NavBar = ({ location }) => {
           <StyledLinkList>
             {backLinks.map(({ name, link }, i) => {
               return (
-                <StyledLink key={i}>
+                <InternalLink key={i}>
                   <NavLink to={name}>
                     {link}
                   </NavLink>
-                </StyledLink>
+                </InternalLink>
               )
             })}
           </StyledLinkList >

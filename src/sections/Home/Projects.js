@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { PrimaryLink } from 'components/Buttons'
+import { ExternalLink } from 'components/Buttons'
 import { BsGithub, BsFiletypePdf, BsFileEarmarkZip, BsFillBugFill } from 'react-icons/bs'
 import { SectionHeader, SectionSubHeader, SectionText } from 'components/Section'
 
@@ -40,10 +40,10 @@ const Projects = () => {
           As mentioned above, this site is still in progress, so feel free to send me any recommendations or feedback using the contact form below, and please, don't mind my bugs!
         </SectionText>
         <StyledButtonGroup>
-          <PrimaryLink href='https://github.com/jaydesmarais/jaydesmarais' target='_blank'>
+          <ExternalLink href='https://github.com/jaydesmarais/jaydesmarais' target='_blank'>
             Source Code &nbsp;
             <BsGithub size={20} />
-          </PrimaryLink>
+          </ExternalLink>
         </StyledButtonGroup>
       </ProjectDescription>
       <ProjectGraphics>
@@ -58,14 +58,14 @@ const Projects = () => {
           This project is a fitness and nutrition tracker that focuses on calories burned vs calorie intake. Written in <strong>Swift</strong>, this project was completed as the final project for a Handheld Programming class in my senior year of college.
         </SectionText>
         <StyledButtonGroup>
-          <PrimaryLink href='https://jaydesmarais.s3.us-east-2.amazonaws.com/LiftLog.zip' target='_blank'>
+          <ExternalLink href='https://jaydesmarais.s3.us-east-2.amazonaws.com/LiftLog.zip' target='_blank'>
             Project Files &nbsp;
             <BsFileEarmarkZip size={20} />
-          </PrimaryLink>
-          <PrimaryLink href='https://jaydesmarais.s3.us-east-2.amazonaws.com/CMSC436Final.pdf' target='_blank'>
+          </ExternalLink>
+          <ExternalLink href='https://jaydesmarais.s3.us-east-2.amazonaws.com/CMSC436Final.pdf' target='_blank'>
             Final Report &nbsp;
             <BsFiletypePdf size={20} />
-          </PrimaryLink>
+          </ExternalLink>
         </StyledButtonGroup>
       </ProjectDescription>
       <ProjectGraphics>
@@ -83,18 +83,18 @@ const Projects = () => {
           As a project lead for this project and one of the only members with experience in front-end development, this project provided me with insights into effective leadership within a team context, while also imparting lessons in navigating challenges arising from variations in experience levels, learning preferences, and work ethic among team members.
         </SectionText>
         <StyledButtonGroup>
-          <PrimaryLink href='https://github.com/jaydesmarais/HealthApp' target='_blank'>
+          <ExternalLink href='https://github.com/jaydesmarais/HealthApp' target='_blank'>
             Source Code &nbsp;
             <BsGithub size={20} />
-          </PrimaryLink>
-          <PrimaryLink href='https://jaydesmarais.s3.us-east-2.amazonaws.com/CMSC434+Midpoint.pdf' target='_blank'>
+          </ExternalLink>
+          <ExternalLink href='https://jaydesmarais.s3.us-east-2.amazonaws.com/CMSC434+Midpoint.pdf' target='_blank'>
             Midpoint Report &nbsp;
             <BsFiletypePdf size={20} />
-          </PrimaryLink>
-          <PrimaryLink href='https://jaydesmarais.s3.us-east-2.amazonaws.com/CMSC434+Final.pdf' target='_blank'>
+          </ExternalLink>
+          <ExternalLink href='https://jaydesmarais.s3.us-east-2.amazonaws.com/CMSC434+Final.pdf' target='_blank'>
             Final Report &nbsp;
             <BsFiletypePdf size={20} />
-          </PrimaryLink>
+          </ExternalLink>
         </StyledButtonGroup>
       </ProjectDescription>
       <ProjectGraphics>

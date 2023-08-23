@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components'
 import { BsFillSendFill, BsFillSendCheckFill } from 'react-icons/bs'
-import { PrimaryButton } from 'components/Buttons'
+import { Button } from 'components/Buttons'
 import { SectionHeader, SectionText } from 'components/Section'
 import emailjs from '@emailjs/browser';
 import ReCAPTCHA from "react-google-recaptcha";
@@ -181,9 +181,9 @@ const Contact = () => {
         <StyledTextArea name='message' placeholder='Message' value={message} onChange={(e) => setMessage(e.target.value)} />
       </StyledFormRow>
       <StyledFormRow>
-        <PrimaryButton type="button" status={status} onClick={() => handleSubmit()}>
+        <Button type="button" status={status} onClick={() => handleSubmit()}>
           {submitButtonContent()}
-        </PrimaryButton>
+        </Button>
       </StyledFormRow>
       <StyledCaptcha>
         <ReCAPTCHA style={{ visibility: 'hidden' }} sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY} ref={captchaRef} badge="bottomright" size="invisible" theme="dark" />

@@ -50,7 +50,7 @@ const StyledLinkList = styled.ul`
   max-width: 70%;
 `
 
-const StyledLink = styled.li`
+const InternalLink = styled.li`
   padding: 5vh 2vw;
   width: 100%;
   color: rgba(255,255,255,.9);
@@ -93,13 +93,13 @@ const NavMenu = ({ location }) => {
         // NavMenu displayed on '/' and '/resume'
         <>
           {/* NavMenu hamburger menu and button to close expanded menu */}
-          < StyledMenuButton >
+          <StyledMenuButton>
             {
               menuOpen
                 ? <BsXLg size='50' onClick={() => setMenuOpen(!menuOpen)} />
                 : <BsList size='50' onClick={() => setMenuOpen(!menuOpen)} />
             }
-          </StyledMenuButton >
+          </StyledMenuButton>
 
           {/* NavMenu links and pop-out */}
           {
@@ -109,25 +109,25 @@ const NavMenu = ({ location }) => {
                   {location && location.pathname === '/' ? navLinks.map(({ name, link }, i) => {
                     // NavMenu and links displayed on '/'
                     return (
-                      <StyledLink key={i}>
+                      <InternalLink key={i}>
                         <ScrollLink to={name} onClick={() => setMenuOpen(false)} spy={true} hashSpy={true} smooth={true}>
                           {link}
                         </ScrollLink>
-                      </StyledLink>
+                      </InternalLink>
                     )
                   }) : backLinks.map(({ name, link }, i) => {
                     // NavMenu and links displayed at '/resume'
                     return (
-                      <StyledLink key={i}>
+                      <InternalLink key={i}>
                         <NavLink to={name} onClick={() => setMenuOpen(false)}>
                           {link}
                         </NavLink>
-                      </StyledLink>
+                      </InternalLink>
                     )
                   })
                   }
-                </StyledLinkList >
-              </StyledNavMenu >
+                </StyledLinkList>
+              </StyledNavMenu>
               :
               <></>
           }

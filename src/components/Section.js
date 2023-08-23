@@ -47,9 +47,9 @@ export const Section = styled.div`
 export const StickyContainer = styled.div`
   position: sticky;
   overflow: hidden;
-  top: 0;
-  height: 90vh;
+  height: 100vh;
   width: 100%;
+  top: 0;
 `
 
 export const SectionContainer = styled.div`
@@ -70,6 +70,7 @@ export const SectionHeader = styled.h1`
 
     @media (max-width: 720px) {
       font-size: 300%;
+      padding-top: 5vh;
     }
   }
 `

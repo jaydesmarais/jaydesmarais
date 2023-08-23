@@ -34,8 +34,7 @@ const App = () => {
       families: [
         'Italiana', // Fine Lines
         'Athiti', // Smaller text!
-        'Bebas Neue', // Caution Tape!
-        'Quicksand' // 
+        'Quicksand'
       ]
     }
   });
