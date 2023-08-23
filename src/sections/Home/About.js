@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 import { styled } from 'styled-components'
-import { Section, SectionContainer, SectionHeader, SectionText } from 'components/Section'
+import { SectionHeader, SectionText } from 'components/Section'
 import { Parallax } from 'react-scroll-parallax'
 
 const CarouselSlide = styled.div`
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: auto 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto 40px;
 `
 
 const CarouselContainer = styled.div`
@@ -86,24 +86,22 @@ const About = () => {
   const [progress, setProgress] = useState(null);
 
   return (
-    <Section className='about'>
-      <SectionContainer>
-        <SectionHeader>About</SectionHeader>
-        <Parallax rotate={[-20, 20]} onProgressChange={(progress) => setProgress(progress)}>
-          <CarouselContainer>
-            <Carousel rotation={progress * 750}>
-              {aboutContent.map((content, i) => {
-                return (
-                  <CarouselCell>
-                    {content}
-                  </CarouselCell>
-                )
-              })}
-            </Carousel>
-          </CarouselContainer>
-        </Parallax>
-      </SectionContainer>
-    </Section >
+    <>
+      <SectionHeader>About</SectionHeader>
+      <Parallax rotate={[-20, 20]} onProgressChange={(progress) => setProgress(progress)}>
+        <CarouselContainer>
+          <Carousel rotation={progress * 100}>
+            {aboutContent.map((content, i) => {
+              return (
+                <CarouselCell>
+                  {content}
+                </CarouselCell>
+              )
+            })}
+          </Carousel>
+        </CarouselContainer>
+      </Parallax>
+    </>
   )
 }
 

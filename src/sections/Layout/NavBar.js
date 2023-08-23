@@ -56,11 +56,11 @@ const NavBar = ({ location }) => {
       return (
         <StyledNavBar>
           <StyledLinkList>
-            {navLinks.map(({ name, link, offset }, i) => {
+            {navLinks.map(({ name, link }, i) => {
               return (
                 <StyledLink key={i}>
-                  <ScrollLink to={link} spy={true} hashSpy={true} smooth={true} offset={offset}>
-                    {name}
+                  <ScrollLink to={name} spy={true} hashSpy={true} smooth={true}>
+                    {link}
                   </ScrollLink>
                 </StyledLink>
               )
@@ -76,8 +76,8 @@ const NavBar = ({ location }) => {
             {backLinks.map(({ name, link }, i) => {
               return (
                 <StyledLink key={i}>
-                  <NavLink to={link}>
-                    {name}
+                  <NavLink to={name}>
+                    {link}
                   </NavLink>
                 </StyledLink>
               )

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { PrimaryLink } from 'components/Buttons'
 import { BsGithub, BsFiletypePdf, BsFileEarmarkZip, BsFillBugFill } from 'react-icons/bs'
-import { Section, SectionContainer, SectionHeader, SectionSubHeader, SectionText } from 'components/Section'
+import { SectionHeader, SectionSubHeader, SectionText } from 'components/Section'
 
 const StyledButtonGroup = styled.div`
   display: flex;
@@ -10,14 +10,27 @@ const StyledButtonGroup = styled.div`
   text-align: center;
 `
 
+const ProjectDescription = styled.div`
+  padding-top: 10vh;
+  height: 100vh;
+  width: 50vh;
+`
+
+const ProjectGraphics = styled.div`
+
+`
+
 // Personal projects section for home page
 const Projects = () => {
   return (
-    <Section>
-      <SectionContainer>
-        <SectionHeader>Projects</SectionHeader>
+    <>
+      <SectionHeader>Projects</SectionHeader>
+      <ProjectDescription>
         <SectionSubHeader>
-          JayDesmarais.com - My Personal Website!
+          JayDesmarais.com
+        </SectionSubHeader>
+        <SectionSubHeader>
+          My Personal Website!
         </SectionSubHeader>
         <SectionText>
           I'm building my own website! To do so, I am using <strong>JavaScript</strong>, <strong>React</strong>, and <strong>CSS</strong> through styled-components. I will continue to iterate and improve on it over the next few weeks while I continue to play with and learn more about interactive and fluid web designs!
@@ -32,8 +45,12 @@ const Projects = () => {
             <BsGithub size={20} />
           </PrimaryLink>
         </StyledButtonGroup>
+      </ProjectDescription>
+      <ProjectGraphics>
 
-        <br />
+      </ProjectGraphics>
+
+      <ProjectDescription>
         <SectionSubHeader>
           LiftLog - iOS Programming Project
         </SectionSubHeader>
@@ -50,8 +67,12 @@ const Projects = () => {
             <BsFiletypePdf size={20} />
           </PrimaryLink>
         </StyledButtonGroup>
+      </ProjectDescription>
+      <ProjectGraphics>
 
-        <br />
+      </ProjectGraphics>
+
+      <ProjectDescription>
         <SectionSubHeader>
           Health App - UI/UX Semester Project
         </SectionSubHeader>
@@ -75,8 +96,11 @@ const Projects = () => {
             <BsFiletypePdf size={20} />
           </PrimaryLink>
         </StyledButtonGroup>
-      </SectionContainer>
-    </Section>
+      </ProjectDescription>
+      <ProjectGraphics>
+
+      </ProjectGraphics>
+    </>
   )
 }
 

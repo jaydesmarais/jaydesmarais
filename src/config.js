@@ -6,11 +6,11 @@ import Projects from 'sections/Home/Projects'
 import Contact from 'sections/Home/Contact'
 
 export const navLinks = [
-  { name: '/', link: 'intro', element: <Intro />, complete: false },
-  { name: '#about', link: 'about', element: <About />, complete: true },
-  { name: '#experience', link: 'experience', element: <Experience />, complete: true },
-  { name: '#projects', link: 'projects', element: <Projects />, complete: true },
-  { name: '#contact', link: 'contact', element: <Contact />, complete: false }
+  { link: '/', name: 'intro', element: <Intro /> },
+  { link: '#about', name: 'about', element: <About /> },
+  { link: '#experience', name: 'experience', element: <Experience /> },
+  { link: '#projects', name: 'projects', element: <Projects /> },
+  { link: '#contact', name: 'contact', element: <Contact /> }
 ]
 
 export const backLinks = [

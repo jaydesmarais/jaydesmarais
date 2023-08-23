@@ -3,9 +3,8 @@ import styled, { keyframes } from 'styled-components'
 import { BsGithub, BsFiletypePdf } from 'react-icons/bs'
 import { StyledLink } from 'components/Buttons'
 import Headshot from 'images/headshot.png'
-import { Section, SectionContainer, SectionHeader, SectionSubHeader, SectionText } from 'components/Section'
+import { SectionHeader, SectionSubHeader, SectionText } from 'components/Section'
 import { Parallax } from 'react-scroll-parallax'
-import { Warning, WarningText } from 'components/Warning'
 
 const Group = styled.div`
   width: 90%;
@@ -22,12 +21,36 @@ const GroupText = styled.div`
 const StyledImage = styled.img`
   border-radius: 10px;
   filter: grayscale(100%);
-  width: 100%;
+  width: 35%;
   object-fit: cover;
 
   @media (max-width: 1080px) {
     width: calc(100%);
   }
+`
+
+const Warning = styled.a`
+  font-family: 'Italiana';
+  text-decoration: none;
+  color: white;
+  font-size: 200%;
+  height: auto;
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 7vh;
+  background: linear-gradient(transparent);
+  border-top: white 1px solid;
+  transition: all .2s ease-in-out; 
+
+  &:hover {
+    cursor: pointer;
+    text-shadow: white 1px 0 10px; 
+    box-shadow: white 1px 0 10px;
+    transform: scale(1.5);
+  }  
 `
 
 const scrollAnimation = keyframes`
@@ -36,96 +59,74 @@ const scrollAnimation = keyframes`
 `
 
 const StyledScrollArrow = styled.div`
-  position: relative;
-  margin: 0 auto 40px;
-  width: 40px;
-  height: 40px;
-  transform: rotate(45deg);
+position: relative;
+margin: 0 auto 40px;
+width: 40px;
+height: 40px;
+transform: rotate(45deg);
+border-left: none;
+border-top: none;
+border-right: 1px #fff solid;
+border-bottom: 1px #fff solid;
+background-color: black;
+
+  &:before {
+  position: absolute;
+  left: 50%;
+  content: '';
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  margin: -10px 0 0-10px;
   border-left: none;
   border-top: none;
   border-right: 1px #fff solid;
   border-bottom: 1px #fff solid;
-  background-color: black;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: ${scrollAnimation};
+}
 
-  &:before {
-    position: absolute;
-    left: 50%;
-    content: '';
-    width: 20px;
-    height: 20px;
-    top: 50%;
-    margin: -10px 0 0 -10px;
-    border-left: none;
-    border-top: none;
-    border-right: 1px #fff solid;
-    border-bottom: 1px #fff solid;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-name: ${scrollAnimation};
-  }
-
-  @media (max-width: 1080px){
-    top: 2vh;
-  }
+@media(max-width: 1080px) {
+  top: 2vh;
+}
 `
 
 // Intro section for home page
 const Intro = () => {
   return (
-    <Section className='intro'>
-      <SectionContainer>
-        <SectionHeader className='intro'>
-          Jay Desmarais
-        </SectionHeader>
-        <Group>
-          <GroupText>
-            <SectionSubHeader className='intro'>
-              I design and build things for the web
-            </SectionSubHeader>
-            <SectionText>
-              I{"'"}m a software engineer based in Boulder, CO with a wide range of experience and education in the realms of full-stack programming, UI/UX, algorithms, AI, ML, cybersecurity, and more, which I pull from to design and build solutions to complex problems.
-            </SectionText>
-            <StyledLink to="/resume" style={{ textDecoration: 'none' }}>
-              Check out my Resume &nbsp;
-              <BsFiletypePdf size={20} />
-            </StyledLink>
-            <Parallax>
-              <div style={{}} />
-            </Parallax>
-          </GroupText>
-          <Parallax
-            speed={-15}
-            style={{
-              display: 'flex', width: '35%', zIndex: -1
-            }}>
-            <StyledImage src={Headshot} alt='headshot' />
-          </Parallax>
-        </Group>
-      </SectionContainer>
+    <>
+      <SectionHeader className='intro'>
+        Jay Desmarais
+      </SectionHeader>
+      <Group>
+        <GroupText>
+          <SectionSubHeader className='intro'>
+            I design and build things for the web
+          </SectionSubHeader>
+          <SectionText>
+            I{"'"}m a software engineer based in Boulder, CO with a wide range of experience and education in the realms of full-stack programming, UI/UX, algorithms, AI, ML, cybersecurity, and more, which I pull from to design and build solutions to complex problems.
+          </SectionText>
+          <StyledLink to="/resume" style={{ textDecoration: 'none' }}>
+            Check out my Resume &nbsp;
+            <BsFiletypePdf size={20} />
+          </StyledLink>
+        </GroupText>
+        <StyledImage src={Headshot} alt='headshot' />
+      </Group>
 
-      <Parallax translateY={[-3, 3]} translateX={[-5, 5]}>
-        <a href='https://github.com/jaydesmarais/jaydesmarais' target='_black' style={{ textDecoration: 'none' }}>
-          <Warning>
-            <WarningText>
-              {[...Array(5)].map((e, i) => (<>
-                <div style={{ fontFamily: 'italiana', display: 'flex', alignItems: 'center' }}>Site Updates weekly &nbsp;
-                  <BsGithub size={20} /></div>
-              </>
-              ))}
-            </WarningText>
-          </Warning>
-        </a>
+      <Warning href='https://github.com/jaydesmarais/jaydesmarais' target='_black'>
+        <BsGithub size={25} />
+        &nbsp; Site Updated Weekly &nbsp;
+        <BsGithub size={25} />
+      </Warning>
 
-      </Parallax>
+      <div style={{
+        fontFamily: 'italiana', textAlign: 'center', color: 'white', fontSize: 'larger'
+      }}>Scroll</div>
+      <StyledScrollArrow />
+    </>
 
-      <SectionContainer className='scroll'>
-        <div style={{
-          fontFamily: 'italiana', textAlign: 'center', color: 'white', fontSize: 'larger'
-        }}>Scroll</div>
-        <StyledScrollArrow />
-      </SectionContainer>
-
-    </Section >
   )
 }
 

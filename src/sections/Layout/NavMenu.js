@@ -110,8 +110,8 @@ const NavMenu = ({ location }) => {
                     // NavMenu and links displayed on '/'
                     return (
                       <StyledLink key={i}>
-                        <ScrollLink to={link} onClick={() => setMenuOpen(false)} spy={true} hashSpy={true} smooth={true}>
-                          {name}
+                        <ScrollLink to={name} onClick={() => setMenuOpen(false)} spy={true} hashSpy={true} smooth={true}>
+                          {link}
                         </ScrollLink>
                       </StyledLink>
                     )
@@ -119,8 +119,8 @@ const NavMenu = ({ location }) => {
                     // NavMenu and links displayed at '/resume'
                     return (
                       <StyledLink key={i}>
-                        <NavLink to={link} onClick={() => setMenuOpen(false)}>
-                          {name}
+                        <NavLink to={name} onClick={() => setMenuOpen(false)}>
+                          {link}
                         </NavLink>
                       </StyledLink>
                     )

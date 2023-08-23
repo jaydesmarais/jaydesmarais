@@ -4,22 +4,23 @@ import styled from 'styled-components'
 export const Section = styled.div`
   position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: auto;
-  height: auto;
-  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
 
   &.intro {
-    display: flex;
     min-height: 100vh;
-    justify-content: center;
   }
 
   &.about {
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
+    min-height: 200vh;
+  }
+
+  &.experience {
+    min-height: 150vh;
+  }
+
+  &.projects {
+    min-height: 300vh;
   }
 
   &.resume {
@@ -31,22 +32,29 @@ export const Section = styled.div`
     justify-content: center;
   }
 
+  &.contact {
+    min-height: 90vh;
+  }
+
   &.footer {
     display: block;
     padding-top: 0;
-    position: relative;
     min-height: 10vh;
     text-align: center;
   }
 `
 
-export const SectionContainer = styled.div`
-  max-width: 1440px;
-  width: 90%;
+export const StickyContainer = styled.div`
+  position: sticky;
+  overflow: hidden;
+  top: 0;
+  height: 90vh;
+  width: 100%;
+`
 
-  &.scroll{
-    background-color: black;
-  }
+export const SectionContainer = styled.div`
+  margin: 0 auto;
+  max-width: 1440px;
 `
 
 export const SectionHeader = styled.h1`
