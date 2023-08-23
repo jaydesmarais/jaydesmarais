@@ -62,6 +62,7 @@ export const Button = styled.button`
 // react-router-dom <Link> that follows site button style.
 export const InternalLink = styled(Link)`
   font-family: 'Italiana';
+  text-decoration: none;
   color: white;
   width: 100%;
   font-size: 150%;

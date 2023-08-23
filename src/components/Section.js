@@ -27,7 +27,7 @@ export const Section = styled.div`
     min-height: 65vh;
   }
 
-  &.lost404 {
+  &.notfound {
     min-height: 75vh;
     justify-content: center;
   }
@@ -54,7 +54,16 @@ export const StickyContainer = styled.div`
 
 export const SectionContainer = styled.div`
   margin: 0 auto;
+  width: 90%;
   max-width: 1440px;
+
+  &.resume {
+    width: 80%;
+  }
+
+  &.notfound {
+    text-align: center;
+  }
 `
 
 export const SectionHeader = styled.h1`
@@ -65,12 +74,29 @@ export const SectionHeader = styled.h1`
   font-size: 600%;
 
   &.intro {
-    font-size: 600%;
     text-align: center;
 
     @media (max-width: 720px) {
       font-size: 300%;
       padding-top: 5vh;
+    }
+  }
+
+  &.error404 {
+    font-size: 1200%;
+    padding-bottom: 0;
+
+    @media (max-width: 720px) {
+      font-size: 800%
+    }
+  }
+
+  &.notfound {
+    padding: 0;
+    padding-bottom: 10vh;
+
+    @media (max-width: 720px) {
+      font-size: 400%
     }
   }
 `

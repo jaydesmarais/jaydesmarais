@@ -7,7 +7,6 @@ import { SectionHeader, SectionSubHeader, SectionText } from 'components/Section
 import { ExternalLink } from 'components/Buttons'
 
 const Group = styled.div`
-  margin: auto 5%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -73,7 +72,7 @@ const ScrollText = styled.p`
   text-align: center;
   font-size: 125%;
   margin-bottom: 10px;
-  margin-top: 7vh;
+  margin-top: 15vh;
 
   @media (max-width: 720px) {
     margin-top: 25px;

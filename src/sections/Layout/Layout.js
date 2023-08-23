@@ -34,13 +34,13 @@ const Layout = () => {
       {/* NavMenu rendered on smaller screens */}
       <NavMenu location={location} />
 
-      {/* Child element passed from the nested <Route> */}
       <MainContainer>
+        {/* Child element passed from the nested <Route> */}
         <Outlet />
-      </MainContainer>
 
-      {/* Footer element displayed at bottom of all pages */}
-      <Footer />
+        {/* Footer element displayed at bottom of all pages */}
+        <Footer />
+      </MainContainer>
     </>
   )
 }
