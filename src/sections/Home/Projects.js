@@ -12,7 +12,7 @@ const StyledButtonGroup = styled.div`
 
 const ProjectDescription = styled.div`
   padding-top: 10vh;
-  height: 100vh;
+  min-height: 100vh;
   width: 50vh;
 `
 

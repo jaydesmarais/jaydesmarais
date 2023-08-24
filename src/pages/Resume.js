@@ -6,7 +6,7 @@ const StyledIframe = styled.iframe`
     width: 100%;
     top: 0;
     left: 0;
-    height: 55vh;
+    min-height: 55vh;
 `;
 
 const Resume = () => {

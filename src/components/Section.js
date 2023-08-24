@@ -12,7 +12,7 @@ export const Section = styled.div`
   }
 
   &.about {
-    min-height: 200vh;
+    min-height: 150vh;
   }
 
   &.experience {

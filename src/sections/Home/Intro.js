@@ -41,7 +41,7 @@ const ScrollArrow = styled.div`
   position: relative;
   margin: 0 auto 40px;
   width: 40px;
-  height: 40px;
+  min-height: 40px;
   transform: rotate(45deg);
   border-left: none;
   border-top: none;
@@ -54,7 +54,7 @@ const ScrollArrow = styled.div`
     left: 50%;
     content: '';
     width: 20px;
-    height: 20px;
+    min-height: 20px;
     top: 50%;
     margin: -10px 0 0-10px;
     border-left: none;
@@ -72,7 +72,7 @@ const ScrollText = styled.p`
   text-align: center;
   font-size: 125%;
   margin-bottom: 10px;
-  margin-top: 15vh;
+  margin-top: 10vh;
 
   @media (max-width: 720px) {
     margin-top: 25px;

@@ -10,11 +10,15 @@ const Home = () => {
         return (
           <Element id={name}>
             <Section className={name}>
-              <StickyContainer>
-                <SectionContainer className={name}>
+              {name !== 'intro' && name !== 'contact' ? (
+                <StickyContainer>
+                  <SectionContainer className={name}>
+                    {element}
+                  </SectionContainer>
+                </StickyContainer>) :
+                (<SectionContainer className={name}>
                   {element}
-                </SectionContainer>
-              </StickyContainer>
+                </SectionContainer>)}
             </Section>
           </Element>
         )

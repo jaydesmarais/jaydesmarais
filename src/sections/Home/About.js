@@ -1,57 +1,7 @@
-import React, { useState } from 'react'
-import { styled } from 'styled-components'
+import React, { useEffect, useState } from 'react'
+import { Carousel, CarouselCell, CarouselContainer, CarouselController, CarouselControl, CarouselSlide } from 'components/Carousel'
 import { SectionHeader, SectionText } from 'components/Section'
 import { Parallax } from 'react-scroll-parallax'
-
-const CarouselSlide = styled.div`
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: auto 40px;
-`
-
-const CarouselContainer = styled.div`
-  transform-style: preserve-3d;
-  margin: 40px 0;
-  position: relative;
-  width: 820px;
-  height: 560px;
-  margin: 80px auto;
-  perspective: 2000px;
-`
-
-const Carousel = styled.div`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transform-style: preserve-3d;
-  transform: ${props => props.rotation ? `translateZ(-850px) rotateY(${-props.rotation}deg)` : 'translateZ(-850px)'};
-`
-
-const CarouselCell = styled.div`
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 780px;
-  height: 520px;
-  transition: transform 1s, opacity 1s;
-  background: rgba(0,0,0,.9);
-  border: 1px solid white;
-  border-radius: 10px;
-  box-shadow:
-    0 0 7px #fff,
-    0 0 10px #fff;
-
-  // 
-  &:nth-child(1) { transform: rotateY(  0deg) translateZ(850px); }
-  &:nth-child(2) { transform: rotateY( 72deg) translateZ(850px); }
-  &:nth-child(3) { transform: rotateY(144deg) translateZ(850px); }
-  &:nth-child(4) { transform: rotateY(216deg) translateZ(850px); }
-  &:nth-child(5) { transform: rotateY(288deg) translateZ(850px); }
-`
 
 const aboutContent = [
   <CarouselSlide>
@@ -79,30 +29,66 @@ const aboutContent = [
     </SectionText>
   </CarouselSlide>,
   <CarouselSlide>
-    <h1>Hi There! 👋🏻 </h1>
+    <h1>I'm currently on the hunt for exciting opportunities!<br /><br />Send me a message! 😄</h1>
   </CarouselSlide>
 ]
 
 // About section for home page
 const About = () => {
-  const [progress, setProgress] = useState(null);
+  const [progress, setProgress] = useState(0);
+  const [rotation, setRotation] = useState(0);
+  const [slide, setSlide] = useState(0);
+  const [picking, setPicking] = useState(false);
+  const [offset, setOffset] = useState(720);
+
+  // Automatically update the carousel
+  useEffect(() => {
+    if (progress < .4 || progress > .6) {
+      // Control the carousel as it is on the top/bottom of the viewport
+      if (picking) {
+        // Calculate the current position as offset to allow for smooth scrolling as the center of the screen is exited and carousel rotation is now tied to scroll (progress) rather than manual controls
+        setOffset(rotation + progress * 360)
+        setPicking(false)
+      }
+      setRotation(offset - progress * 360)
+    } else {
+      // Control the carousel as it is on the center of the viewport
+      if (!picking) {
+        // Set the carousel to manuel control
+        setPicking(true)
+      }
+      // Set the carousel to a position based on the selected slide
+      setRotation(360 + slide * 72)
+    }
+  }, [offset, picking, progress, rotation, slide])
 
   return (
     <>
       <SectionHeader>About</SectionHeader>
-      <Parallax rotate={[-20, 20]} onProgressChange={(progress) => setProgress(progress)}>
-        <CarouselContainer>
-          <Carousel rotation={progress * 100}>
-            {aboutContent.map((content, i) => {
-              return (
-                <CarouselCell>
-                  {content}
-                </CarouselCell>
-              )
-            })}
+      <Parallax rotate={[-20, 20]} onProgressChange={(p) => setProgress(p)}>
+        <CarouselContainer onClick={() => setSlide((slide + 1) % 5)}>
+          <Carousel rotation={rotation} style={{ transition: picking && 'all 1s' }}>
+            {
+              aboutContent.map((content, i) => {
+                return (
+                  <CarouselCell>
+                    {content}
+                  </CarouselCell>
+                )
+              })
+            }
           </Carousel>
         </CarouselContainer>
       </Parallax>
+      {/* Buttons to control the carousel */}
+      <CarouselController style={{ opacity: !picking && 0 }}>
+        <CarouselControl active={rotation % 360 >= 0 && rotation % 360 < 72} onClick={() => setSlide(0)} />
+        <CarouselControl active={rotation % 360 >= 72 && rotation % 360 < 144} onClick={() => setSlide(1)} />
+        <CarouselControl active={rotation % 360 >= 144 && rotation % 360 < 216} onClick={() => setSlide(2)} />
+        <CarouselControl active={rotation % 360 >= 216 && rotation % 360 < 288} onClick={() => setSlide(3)} />
+        <CarouselControl active={rotation % 360 >= 288 && rotation % 360 < 360} onClick={() => setSlide(4)} />
+      </CarouselController>
+
     </>
   )
 }
