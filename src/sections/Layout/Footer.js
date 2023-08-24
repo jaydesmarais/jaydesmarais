@@ -4,14 +4,16 @@ import { socialLinks } from 'config'
 import { Section } from 'components/Section'
 
 const StyledSocialIcons = styled.a`
-  display: inline-block;
+  height: 40px;
+border-radius: 10px;
   color: white;
   margin: 1em 1vw;
-  padding: 1em 2vw;
+  padding: 20px;
 
   &:hover {
-    background-color: white;
-    color: black;
+    box-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff;
   }
 `
 

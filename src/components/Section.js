@@ -37,10 +37,9 @@ export const Section = styled.div`
   }
 
   &.footer {
-    display: block;
-    padding-top: 0;
     min-height: 10vh;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
   }
 `
 
@@ -98,6 +97,11 @@ export const SectionHeader = styled.h1`
     @media (max-width: 720px) {
       font-size: 400%
     }
+  }
+
+  &.projects {
+    padding-bottom: 10vh;
+    background: linear-gradient(black, 80%, transparent);
   }
 `
 

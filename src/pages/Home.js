@@ -10,7 +10,7 @@ const Home = () => {
         return (
           <Element id={name}>
             <Section className={name}>
-              {name !== 'intro' && name !== 'contact' ? (
+              {name === 'experience' || name === 'about' ? (
                 <StickyContainer>
                   <SectionContainer className={name}>
                     {element}
@@ -18,9 +18,11 @@ const Home = () => {
                 </StickyContainer>) :
                 (<SectionContainer className={name}>
                   {element}
-                </SectionContainer>)}
+                </SectionContainer>
+                )
+              }
             </Section>
-          </Element>
+          </Element >
         )
       })}
     </>
