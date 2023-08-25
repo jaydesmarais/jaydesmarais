@@ -13,6 +13,7 @@ const Group = styled.div`
 `
 
 const GroupText = styled.div`
+  margin: 0 2.5%;
   width: 55%;
 
   @media (max-width: 720px) {

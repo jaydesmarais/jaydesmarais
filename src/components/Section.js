@@ -4,8 +4,12 @@ import styled from 'styled-components'
 export const Section = styled.div`
   position: relative;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
+  max-width: 1440px;
   min-height: 100vh;
+  margin: 0 auto;
 
   &.intro {
     min-height: 100vh;
@@ -16,7 +20,7 @@ export const Section = styled.div`
   }
 
   &.experience {
-    min-height: 150vh;
+    min-height: 125vh;
   }
 
   &.projects {
@@ -25,59 +29,63 @@ export const Section = styled.div`
 
   &.resume {
     min-height: 65vh;
+    width: 80%;
   }
 
   &.notfound {
+    width: 90%;
     min-height: 75vh;
-    justify-content: center;
+    text-align: center;
   }
 
   &.contact {
+    width: 80%;
     min-height: 90vh;
+    text-align: center;
   }
 
   &.footer {
     min-height: 10vh;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
   }
 `
 
+export const StickyWrapper = styled.div`
+  position: absolute;
+  height: 100%;
+  top: 0;
+  width: 100%;
+`
+
 export const StickyContainer = styled.div`
   position: sticky;
   overflow: hidden;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   top: 0;
 `
 
-export const SectionContainer = styled.div`
-  margin: 0 auto;
-  width: 90%;
-  max-width: 1440px;
-
-  &.resume {
-    width: 80%;
-  }
-
-  &.notfound {
-    text-align: center;
-  }
-`
-
 export const SectionHeader = styled.h1`
   margin: 0;
+  padding-left: 20px;
   padding-top: 10vh;
-  padding-bottom: 5vh;
+  padding-bottom: 20px;
   z-index: 100;
   font-size: 600%;
+
+  @media (max-width: 720px) {
+    font-size: 300%;
+    padding-top: 5vh;
+  }
 
   &.intro {
     text-align: center;
 
     @media (max-width: 720px) {
-      font-size: 300%;
-      padding-top: 5vh;
+      padding-top: 10vh;
     }
   }
 
@@ -130,6 +138,11 @@ export const SectionText = styled.p`
   &.logo {
     display: flex;
     align-items: center;
+  }
+
+  &.contact {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
   }
 `
 

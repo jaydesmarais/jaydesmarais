@@ -1,7 +1,7 @@
 import React from 'react'
 import { Element } from 'react-scroll'
 import { navLinks } from 'config'
-import { Section, SectionContainer, StickyContainer } from 'components/Section'
+import { Section } from 'components/Section'
 
 const Home = () => {
   return (
@@ -10,19 +10,9 @@ const Home = () => {
         return (
           <Element id={name}>
             <Section className={name}>
-              {name === 'experience' || name === 'about' ? (
-                <StickyContainer>
-                  <SectionContainer className={name}>
-                    {element}
-                  </SectionContainer>
-                </StickyContainer>) :
-                (<SectionContainer className={name}>
-                  {element}
-                </SectionContainer>
-                )
-              }
+              {element}
             </Section>
-          </Element >
+          </Element>
         )
       })}
     </>

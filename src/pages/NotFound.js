@@ -1,4 +1,4 @@
-import { Section, SectionContainer, SectionHeader } from 'components/Section';
+import { Section, SectionHeader } from 'components/Section';
 import React from 'react'
 import { InternalLink } from 'components/Buttons';
 
@@ -7,16 +7,14 @@ const NotFound = () => {
   return (
     <>
       <Section className='notfound'>
-        <SectionContainer className='notfound'>
-          <SectionHeader className='error404'>
-            404
-          </SectionHeader>
-          <SectionHeader className='notfound'>
-            Page Not Found
-          </SectionHeader>
+        <SectionHeader className='error404'>
+          404
+        </SectionHeader>
+        <SectionHeader className='notfound'>
+          Page Not Found
+        </SectionHeader>
 
-          <InternalLink to={"/"}>Return Home</InternalLink>
-        </SectionContainer>
+        <InternalLink to={"/"}>Return Home</InternalLink>
       </Section>
     </>
   )

@@ -26,14 +26,15 @@ const ProjectTitle = styled.div`
 `
 
 const ProjectSection = styled.div`
-  min-height: 125vh;
+  min-height: 100vh;
 `
 
 const ProjectDescription = styled.div`
   position: absolute;
   padding-top: 30vh;
   min-height: 100vh;
-  width: 50%;
+  width: 45%;
+  margin-left: 2.5%;
 `
 
 const ProjectGraphics = styled.div`
