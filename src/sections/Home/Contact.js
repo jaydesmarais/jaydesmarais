@@ -1,16 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components'
 import { BsFillSendFill, BsFillSendCheckFill } from 'react-icons/bs'
-import { PrimaryButton } from 'components/Buttons'
+import { Button } from 'components/Buttons'
+import { SectionHeader, SectionText } from 'components/Section'
 import emailjs from '@emailjs/browser';
 import ReCAPTCHA from "react-google-recaptcha";
 import validator from 'validator';
-
-const StyledContainer = styled.div`
-  position: relative;
-  padding-top: 7vh;
-  padding-bottom: 3vh;
-`
 
 const StyledFormRow = styled.div`
   display: flex;
@@ -21,7 +16,6 @@ const StyledFormRow = styled.div`
 const StyledWarning = styled.div`
   padding: 1vh 2vw;
   text-align: center;
-  border-radius: 10px;
   color: red;
   height: 2vh;
 `
@@ -30,22 +24,22 @@ const StyledInput = styled.input`
   font-size: medium;
   color: white;
   flex: auto;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 10px;
   background-color: black;
-  margin: 1em 1vw;
-  padding: 1em 2vw;
+  margin: .5em 1vw;
+  padding: .5em 2vw;
 `
 
 const StyledTextArea = styled.textarea`
   font-size: medium;
   color: white;
   flex: auto;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 10px;
   background-color: black;
-  margin: 1em 1vw;
-  padding: 1em 2vw;
+  margin: .5em 1vw;
+  padding: .5em 2vw;
   height: 200px;
 `
 
@@ -173,12 +167,11 @@ const Contact = () => {
   }, [name, email, subject, message])
 
   return (
-    <StyledContainer id="contact" >
-      <h1>Contact</h1>
-      <br />
-      <p>
+    <>
+      <SectionHeader>Contact</SectionHeader>
+      <SectionText>
         I am currently seeking new opportunities! If you have a project in need of collaboration, are growing your team, or simply want to chat, please don't hesitate to get in touch. I'm open and eager to connect!
-      </p>
+      </SectionText>
       <StyledFormRow>
         <StyledInput name='name' placeholder='Name' value={name} onChange={(e) => setName(e.target.value)} />
         <StyledInput name='email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -188,9 +181,9 @@ const Contact = () => {
         <StyledTextArea name='message' placeholder='Message' value={message} onChange={(e) => setMessage(e.target.value)} />
       </StyledFormRow>
       <StyledFormRow>
-        <PrimaryButton type="button" status={status} onClick={() => handleSubmit()}>
+        <Button type="button" status={status} onClick={() => handleSubmit()}>
           {submitButtonContent()}
-        </PrimaryButton>
+        </Button>
       </StyledFormRow>
       <StyledCaptcha>
         <ReCAPTCHA style={{ visibility: 'hidden' }} sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY} ref={captchaRef} badge="bottomright" size="invisible" theme="dark" />
@@ -203,7 +196,7 @@ const Contact = () => {
           <>{warning}</>
         }
       </StyledWarning>
-    </StyledContainer >
+    </>
   )
 }
 

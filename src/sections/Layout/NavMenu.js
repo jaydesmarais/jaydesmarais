@@ -48,10 +48,9 @@ const StyledLinkList = styled.ul`
   border-radius: 10px;
   list-style: none;
   max-width: 70%;
-  font-size: larger;
 `
 
-const StyledLink = styled.li`
+const InternalLink = styled.li`
   padding: 5vh 2vw;
   width: 100%;
   color: rgba(255,255,255,.9);
@@ -79,6 +78,7 @@ const NavMenu = ({ location }) => {
 
   const [menuOpen, setMenuOpen] = useState(false)
 
+  // Close the menu when the window is resized
   const handleResize = () => {
     if (menuOpen && window.innerWidth >= 720) {
       setMenuOpen(false)
@@ -93,13 +93,13 @@ const NavMenu = ({ location }) => {
         // NavMenu displayed on '/' and '/resume'
         <>
           {/* NavMenu hamburger menu and button to close expanded menu */}
-          < StyledMenuButton >
+          <StyledMenuButton>
             {
               menuOpen
                 ? <BsXLg size='50' onClick={() => setMenuOpen(!menuOpen)} />
                 : <BsList size='50' onClick={() => setMenuOpen(!menuOpen)} />
             }
-          </StyledMenuButton >
+          </StyledMenuButton>
 
           {/* NavMenu links and pop-out */}
           {
@@ -109,25 +109,25 @@ const NavMenu = ({ location }) => {
                   {location && location.pathname === '/' ? navLinks.map(({ name, link }, i) => {
                     // NavMenu and links displayed on '/'
                     return (
-                      <StyledLink key={i}>
-                        <ScrollLink to={link} onClick={() => setMenuOpen(false)} spy={true} hashSpy={true} smooth={true}>
-                          {name}
+                      <InternalLink key={i}>
+                        <ScrollLink to={name} onClick={() => setMenuOpen(false)} spy={true} hashSpy={true} smooth={true}>
+                          {link}
                         </ScrollLink>
-                      </StyledLink>
+                      </InternalLink>
                     )
                   }) : backLinks.map(({ name, link }, i) => {
                     // NavMenu and links displayed at '/resume'
                     return (
-                      <StyledLink key={i}>
-                        <NavLink to={link} onClick={() => setMenuOpen(false)}>
-                          {name}
+                      <InternalLink key={i}>
+                        <NavLink to={name} onClick={() => setMenuOpen(false)}>
+                          {link}
                         </NavLink>
-                      </StyledLink>
+                      </InternalLink>
                     )
                   })
                   }
-                </StyledLinkList >
-              </StyledNavMenu >
+                </StyledLinkList>
+              </StyledNavMenu>
               :
               <></>
           }

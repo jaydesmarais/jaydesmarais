@@ -11,7 +11,6 @@ const Head = () => {
         <meta name="theme-color" content="#000000" />
       </Helmet>
     </HelmetProvider>
-
   )
 }
 

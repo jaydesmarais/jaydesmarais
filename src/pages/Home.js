@@ -1,18 +1,30 @@
 import React from 'react'
-import Intro from '../sections/Home/Intro'
-import About from '../sections/Home/About'
-import Experience from '../sections/Home/Experience'
-import Projects from '../sections/Home/Projects'
-import Contact from '../sections/Home/Contact'
+import { Element } from 'react-scroll'
+import { navLinks } from 'config'
+import { Section, SectionContainer, StickyContainer } from 'components/Section'
 
 const Home = () => {
   return (
     <>
-      <Intro />
-      <About />
-      <Experience />
-      <Projects />
-      <Contact />
+      {navLinks.map(({ name, element }, i) => {
+        return (
+          <Element id={name}>
+            <Section className={name}>
+              {name === 'experience' || name === 'about' ? (
+                <StickyContainer>
+                  <SectionContainer className={name}>
+                    {element}
+                  </SectionContainer>
+                </StickyContainer>) :
+                (<SectionContainer className={name}>
+                  {element}
+                </SectionContainer>
+                )
+              }
+            </Section>
+          </Element >
+        )
+      })}
     </>
   )
 }

@@ -1,46 +1,25 @@
 import React from 'react'
 import styled from 'styled-components'
-import { BsLinkedin, BsGithub, BsInstagram, BsFillEnvelopeFill, BsFillChatFill } from 'react-icons/bs'
-
-const StyledContainer = styled.div`
-  min-height: 20vh;
-  text-align: center;
-`
+import { socialLinks } from 'config'
+import { Section } from 'components/Section'
 
 const StyledSocialIcons = styled.a`
-  display: inline-block;
+  height: 40px;
+border-radius: 10px;
   color: white;
   margin: 1em 1vw;
-  padding: 1em 2vw;
+  padding: 20px;
 
   &:hover {
-    background-color: white;
-    color: black;
-    border-radius: 10px
+    box-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff;
   }
 `
-
-const socialLinks = [
-  {
-    name: 'linkedin', link: 'https://www.linkedin.com/in/jaydesmarais/', icon: <BsLinkedin size={40} fill='url(#linkedinGrad)' />
-  },
-  {
-    name: 'github', link: 'https://github.com/jaydesmarais', icon: <BsGithub size={40} fill='url(#githubGrad)' />
-  },
-  {
-    name: 'instagram', link: 'https://www.instagram.com/jaydesmarais/', icon: <BsInstagram size={40} fill='url(#instagramGrad)' />
-  },
-  {
-    name: 'email', link: 'mailto:jmdesmarais01@gmail.com', icon: <BsFillEnvelopeFill size={40} fill="url(#emailGrad)" />
-  },
-  {
-    name: 'text', link: 'sms:4437454624', icon: <BsFillChatFill size={40} fill="url(#textGrad)" />
-  }
-]
 
 const Footer = () => {
   return (
-    <StyledContainer>
+    <Section className='footer'>
       {/* Linkedin logo svg background gradient */}
       <svg width="0" height="0">
         <linearGradient id="linkedinGrad" y1="100%">
@@ -60,11 +39,11 @@ const Footer = () => {
       {/* Instagram logo svg background gradient */}
       <svg width="0" height="0">
         <radialGradient id="instagramGrad" r="150%" cx="30%" cy="107%">
-          <stop stop-color="#fdf497" offset="0%" />
-          <stop stop-color="#fdf497" offset="5%" />
-          <stop stop-color="#fd5949" offset="45%" />
-          <stop stop-color="#d6249f" offset="60%" />
-          <stop stop-color="#285AEB" offset="90%" />
+          <stop stopColor="#fdf497" offset="0%" />
+          <stop stopColor="#fdf497" offset="5%" />
+          <stop stopColor="#fd5949" offset="45%" />
+          <stop stopColor="#d6249f" offset="60%" />
+          <stop stopColor="#285AEB" offset="90%" />
         </radialGradient>
       </svg>
 
@@ -94,9 +73,7 @@ const Footer = () => {
         })
       }
 
-      <h2>Thanks for stopping by!</h2>
-
-    </StyledContainer >
+    </Section >
   )
 }
 

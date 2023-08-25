@@ -2,20 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 import App from './App';
-import WebFont from 'webfontloader'
-import { BrowserRouter } from 'react-router-dom';
-
-WebFont.load({
-  google: {
-    families: ['Unbounded']
-  }
-});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <App />
   </React.StrictMode>
 );
