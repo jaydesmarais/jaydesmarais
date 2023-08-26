@@ -21,7 +21,7 @@ const StyledWarning = styled.div`
 `
 
 const StyledInput = styled.input`
-  font-size: medium;
+  font-size: large;
   color: white;
   flex: auto;
   border: 1px solid white;
@@ -32,7 +32,7 @@ const StyledInput = styled.input`
 `
 
 const StyledTextArea = styled.textarea`
-  font-size: medium;
+  font-size: large;
   color: white;
   flex: auto;
   border: 1px solid white;
@@ -47,7 +47,6 @@ const StyledCaptcha = styled.div`
   font-size: small;
   text-align: center;
   color: white;
-  flex: auto;
   margin: 0 1vw;
 `
 
@@ -169,7 +168,7 @@ const Contact = () => {
   return (
     <>
       <SectionHeader>Contact</SectionHeader>
-      <SectionText>
+      <SectionText className='contact'>
         I am currently seeking new opportunities! If you have a project in need of collaboration, are growing your team, or simply want to chat, please don't hesitate to get in touch. I'm open and eager to connect!
       </SectionText>
       <StyledFormRow>

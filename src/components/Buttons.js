@@ -16,6 +16,7 @@ export const ExternalLink = styled.a`
   border: white 1px solid;
   border-radius: 10px;
   transition: all .2s ease-in-out; 
+  pointer-events: auto;
   box-shadow:
     0 0 7px #fff,
     0 0 10px #fff;
@@ -27,14 +28,19 @@ export const ExternalLink = styled.a`
       0 0 10px #fff,
       0 0 17px #fff;
   }
+
+  @media (max-width: 720px) {
+    font-size: 100%;
+  }
 `
 
 // <button> that follows site style.
 export const Button = styled.button`
-  font-size: medium;
+  font-size: large;
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex: auto;
   min-width: 100px;
   overflow: auto;
@@ -46,16 +52,24 @@ export const Button = styled.button`
   cursor: pointer;
   background-color: black;
   text-decoration: none;
+  pointer-events: auto;
 
   &:hover {
-    background-color: white;
-    color: black;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 17px #fff;
+
+    box-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 17px #fff;
   }
 
   ${props => props.status > 0 && {
-    color: 'black',
-    backgroundColor: 'white',
     cursor: 'default',
+    textShadow: "0 0 7px #fff, 0 0 10px #fff, 0 0 17px #fff",
+    boxShadow: "0 0 7px #fff, 0 0 10px #fff, 0 0 17px #fff"
   }};
 `
 
@@ -73,17 +87,22 @@ export const InternalLink = styled(Link)`
   padding: 10px 0;
   border: white 1px solid;
   border-radius: 10px;
-  transition: all .2s ease-in-out; 
+  transition: all .2s ease -in -out;
+  pointer-events: auto;
   box-shadow:
-    0 0 7px #fff,
+  0 0 7px #fff,
     0 0 10px #fff;
 
-  &:hover {
+    &:hover {
     cursor: pointer;
     text-shadow:
-      0 0 7px #fff,
+    0 0 7px #fff,
       0 0 10px #fff,
-      0 0 17px #fff;
+        0 0 17px #fff;
+  }
+
+  @media(max-width: 720px) {
+    font-size: 100%;
   }
 `
 

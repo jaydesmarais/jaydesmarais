@@ -1,13 +1,12 @@
 import styled from 'styled-components'
 
 export const CarouselContainer = styled.div`
-  transform-style: preserve-3d;
-  margin: 40px 0;
   position: relative;
+  transform-style: preserve-3d;
+  margin: 80px auto;
   width: 820px;
   height: 560px;
-  margin: 80px auto;
-  perspective: 2000px;
+  perspective: 1250px;
 `
 
 export const Carousel = styled.div`
@@ -33,11 +32,11 @@ export const CarouselCell = styled.div`
     0 0 10px #fff;
 
   // Set the initial position of all carousel cells in a 3d circle
-  &:nth-child(1) { transform: rotateY(  0deg) translateZ(850px); }
-  &:nth-child(2) { transform: rotateY( 72deg) translateZ(850px); }
-  &:nth-child(3) { transform: rotateY(144deg) translateZ(850px); }
-  &:nth-child(4) { transform: rotateY(216deg) translateZ(850px); }
-  &:nth-child(5) { transform: rotateY(288deg) translateZ(850px); }
+  &:nth-child(1) { transform: rotateY(  0deg) translateZ(820px); }
+  &:nth-child(2) { transform: rotateY( 72deg) translateZ(820px); }
+  &:nth-child(3) { transform: rotateY(144deg) translateZ(820px); }
+  &:nth-child(4) { transform: rotateY(216deg) translateZ(820px); }
+  &:nth-child(5) { transform: rotateY(288deg) translateZ(820px); }
 `
 
 export const CarouselSlide = styled.div`

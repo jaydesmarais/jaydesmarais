@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Carousel, CarouselCell, CarouselContainer, CarouselController, CarouselControl, CarouselSlide } from 'components/Carousel'
-import { SectionHeader, SectionText } from 'components/Section'
+import { SectionHeader, SectionText, StickyWrapper, StickyContainer } from 'components/Section'
 import { Parallax } from 'react-scroll-parallax'
 
 const aboutContent = [
@@ -64,31 +64,34 @@ const About = () => {
 
   return (
     <>
-      <SectionHeader>About</SectionHeader>
-      <Parallax rotate={[-20, 20]} onProgressChange={(p) => setProgress(p)}>
-        <CarouselContainer onClick={() => setSlide((slide + 1) % 5)}>
-          <Carousel rotation={rotation} style={{ transition: picking && 'all 1s' }}>
-            {
-              aboutContent.map((content, i) => {
-                return (
-                  <CarouselCell>
-                    {content}
-                  </CarouselCell>
-                )
-              })
-            }
-          </Carousel>
-        </CarouselContainer>
-      </Parallax>
-      {/* Buttons to control the carousel */}
-      <CarouselController style={{ opacity: !picking && 0 }}>
-        <CarouselControl active={rotation % 360 >= 0 && rotation % 360 < 72} onClick={() => setSlide(0)} />
-        <CarouselControl active={rotation % 360 >= 72 && rotation % 360 < 144} onClick={() => setSlide(1)} />
-        <CarouselControl active={rotation % 360 >= 144 && rotation % 360 < 216} onClick={() => setSlide(2)} />
-        <CarouselControl active={rotation % 360 >= 216 && rotation % 360 < 288} onClick={() => setSlide(3)} />
-        <CarouselControl active={rotation % 360 >= 288 && rotation % 360 < 360} onClick={() => setSlide(4)} />
-      </CarouselController>
-
+      <StickyWrapper>
+        <StickyContainer>
+          <SectionHeader>About</SectionHeader>
+          <Parallax style={{ height: '100%' }} rotate={[-20, 20]} onProgressChange={(p) => setProgress(p)}>
+            <CarouselContainer onClick={() => setSlide((slide + 1) % 5)}>
+              <Carousel rotation={rotation} style={{ transition: picking && 'all 1s' }}>
+                {
+                  aboutContent.map((content, i) => {
+                    return (
+                      <CarouselCell>
+                        {content}
+                      </CarouselCell>
+                    )
+                  })
+                }
+              </Carousel>
+            </CarouselContainer>
+          </Parallax>
+          {/* Buttons to control the carousel */}
+          <CarouselController style={{ opacity: !picking && 0 }}>
+            <CarouselControl active={rotation % 360 >= 0 && rotation % 360 < 72} onClick={() => setSlide(0)} />
+            <CarouselControl active={rotation % 360 >= 72 && rotation % 360 < 144} onClick={() => setSlide(1)} />
+            <CarouselControl active={rotation % 360 >= 144 && rotation % 360 < 216} onClick={() => setSlide(2)} />
+            <CarouselControl active={rotation % 360 >= 216 && rotation % 360 < 288} onClick={() => setSlide(3)} />
+            <CarouselControl active={rotation % 360 >= 288 && rotation % 360 < 360} onClick={() => setSlide(4)} />
+          </CarouselController>
+        </StickyContainer>
+      </StickyWrapper>
     </>
   )
 }

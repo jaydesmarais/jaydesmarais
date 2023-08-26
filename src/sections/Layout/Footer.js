@@ -5,7 +5,7 @@ import { Section } from 'components/Section'
 
 const StyledSocialIcons = styled.a`
   height: 40px;
-border-radius: 10px;
+  border-radius: 10px;
   color: white;
   margin: 1em 1vw;
   padding: 20px;
