@@ -1,9 +1,7 @@
 import laptop from './laptop.png'
-import phone from './phone.png'
 
 const photos = [
-  laptop,
-  phone
+  laptop
 ]
 
 export default photos;

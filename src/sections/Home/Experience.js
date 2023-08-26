@@ -4,24 +4,6 @@ import { Parallax } from 'react-scroll-parallax'
 import { SiAtandt, SiAmazon } from 'react-icons/si'
 import { SectionHeader, SectionSubHeader, StickyContainer, StickyWrapper } from 'components/Section'
 
-const JobInfo = styled.h3`
-  margin-bottom: 0;
-
-  &.title {
-    width: 85%;
-    padding-top: 0.5em;
-    border-top: 1px solid white;
-  }
-
-  &.dates {
-    margin-top: 0;
-  }
-
-  &.tech {
-    width: 75%;
-  }
-`
-
 const Jobs = styled.div`
   min-height: 65vh;
   display: flex;
@@ -29,6 +11,8 @@ const Jobs = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 `
 
 const JobRow = styled.div`
@@ -37,6 +21,7 @@ const JobRow = styled.div`
   display: flex;
   flex-wrap: wrap;
   height: auto;
+  min-height: 30vh;
 `
 
 const JobSummary = styled.div`
@@ -48,6 +33,7 @@ const JobSummary = styled.div`
   justify-content: center;
   position: relative;
   z-index: 1000;
+
 
   &.left {
     background: linear-gradient(to right, black, 95%, transparent)
@@ -76,10 +62,31 @@ const JobSummary = styled.div`
   }
 `
 
+const JobInfo = styled.h3`
+  margin-bottom: 0;
+
+  &.title {
+    width: 85%;
+    padding-top: 0.5em;
+    border-top: 1px solid white;
+  }
+
+  &.dates {
+    margin-top: 0;
+  }
+
+  &.tech {
+    width: 75%;
+  }
+`
+
 const JobStory = styled.div`
+  display: flex;
+  align-items: center;
   opacity: 1;
   width: 100%;
   margin: 1em;
+  min-height: 30vh;
 
   div {
     opacity: 1;
@@ -150,8 +157,8 @@ const Experience = () => {
   return (
     <>
       <StickyWrapper>
-        <StickyContainer>
-          <SectionHeader>Experience</SectionHeader>
+        <StickyContainer className='experience'>
+          <SectionHeader className='experience'>Experience</SectionHeader>
           <Jobs>
             <JobRow>
               <JobSummary className='left largeScreen'>

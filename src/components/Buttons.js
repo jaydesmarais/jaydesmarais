@@ -16,6 +16,7 @@ export const ExternalLink = styled.a`
   border: white 1px solid;
   border-radius: 10px;
   transition: all .2s ease-in-out; 
+  pointer-events: auto;
   box-shadow:
     0 0 7px #fff,
     0 0 10px #fff;
@@ -51,6 +52,7 @@ export const Button = styled.button`
   cursor: pointer;
   background-color: black;
   text-decoration: none;
+  pointer-events: auto;
 
   &:hover {
     text-shadow:
@@ -86,6 +88,7 @@ export const InternalLink = styled(Link)`
   border: white 1px solid;
   border-radius: 10px;
   transition: all .2s ease -in -out;
+  pointer-events: auto;
   box-shadow:
   0 0 7px #fff,
     0 0 10px #fff;

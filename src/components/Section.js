@@ -13,18 +13,37 @@ export const Section = styled.div`
 
   &.intro {
     min-height: 100vh;
+
+    @media (max-width: 1080px) {
+      font-size: 75%;
+    }
   }
 
   &.about {
-    min-height: 150vh;
+    min-height: 175vh;
+
+    @media (max-width: 1080px) {
+      font-size: 75%;
+    }
   }
 
   &.experience {
+    max-width: 100%;
     min-height: 125vh;
+
+    @media (max-width: 1080px) {
+      font-size: 75%;
+    }
   }
 
   &.projects {
-    min-height: 300vh;
+    min-height: 450vh;
+      pointer-events: none; 
+
+
+    @media (max-width: 1080px) {
+      font-size: 75%;
+    }
   }
 
   &.resume {
@@ -42,6 +61,10 @@ export const Section = styled.div`
     width: 80%;
     min-height: 90vh;
     text-align: center;
+
+    @media (max-width: 1080px) {
+      font-size: 75%;
+    }
   }
 
   &.footer {
@@ -69,6 +92,8 @@ export const StickyContainer = styled.div`
 `
 
 export const SectionHeader = styled.h1`
+  width: 100%;
+  max-width: 1440px;
   margin: 0;
   padding-left: 20px;
   padding-top: 10vh;
@@ -109,7 +134,10 @@ export const SectionHeader = styled.h1`
 
   &.projects {
     padding-bottom: 10vh;
-    background: linear-gradient(black, 80%, transparent);
+  }
+
+  &.experience {
+    margin: 0 auto;
   }
 `
 
