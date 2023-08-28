@@ -92,7 +92,7 @@ export const StickyContainer = styled.div`
 `
 
 export const SectionHeader = styled.h1`
-  width: 100%;
+  width: calc(100% - 20px);
   max-width: 1440px;
   margin: 0;
   padding-left: 20px;

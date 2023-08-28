@@ -1,32 +1,92 @@
 import React, { useEffect, useState } from 'react'
 import { Carousel, CarouselCell, CarouselContainer, CarouselController, CarouselControl, CarouselSlide } from 'components/Carousel'
 import { SectionHeader, SectionText, StickyWrapper, StickyContainer } from 'components/Section'
+import styled from 'styled-components'
+import umd from 'images/umd.png'
+import hcc from 'images/hcc.png'
+import snowboard from 'images/snowboard.png'
 import { Parallax } from 'react-scroll-parallax'
+
+const Image = styled.img`
+  height: 150px;
+  border-radius: 10px;
+
+  &.snowboard {
+    height: 300px;
+  }
+`
+
+const Dual = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+
+
+  &.education {
+    align-items: start;
+  }
+`
 
 const aboutContent = [
   <CarouselSlide>
-    <h1>I'm Jay! 👨🏻‍💻 </h1>
+    <h1>Hello! 👋🏻 I'm Jay! 👨🏻‍💻 </h1>
     <SectionText>
-      My love for software development began when I enrolled in cyber-security courses at my local community college. Having amassed 54 college credits prior to high school graduation, I continued to complete my associate's degree in cyber-security just one semester after high school. Following that, I pursued a more rigorous education at the University of Maryland, College Park. This journey culminated in the successful attainment of a bachelor's degree in computer science, which I complemented with a minor in Real Estate Development.
+      I'm a problem solver at heart. By studying computer science, I've discovered my passion for using technology to enhance everyday life. Whether it's crafting engaging websites, empowering apps, or streamlining work, I'm dedicated to creating solutions that make a tangible impact. My goal is to add enjoyment to the ordinary and increase accessibility to the extraordinary. Welcome to my journey of innovation
     </SectionText>
   </CarouselSlide>,
   <CarouselSlide>
-    <h1>Education 🎓</h1>
-    <SectionText>
-      My educational path has been marked by exploration across a diverse spectrum of computer science disciplines. My proficiency spans full-stack development, algorithmic problem-solving, UI/UX design, AI/ML, and cyber-security intricacies, among others. This diverse exposure has not only equipped me with versatile skills but has also ignited a passion for solving complex challenges that transcend traditional disciplinary boundaries.
-    </SectionText>
-  </CarouselSlide>,
+    <Dual className='education'>
+      <div className='umd'>
+        <Image src={umd} alt='umd' />
+        <h3>University of Maryland</h3>
+        <SectionText>Bachelors in Computer Science
+          <br />
+          Minor in Real Estate
+        </SectionText>
+      </div>
+      <div className='hcc'>
+        <Image src={hcc} alt='umd' />
+
+        <h3>Howard Community College</h3>
+        <SectionText>Associate in Cybersecurity</SectionText>
+      </div>
+    </Dual>
+    <h3>
+      #full-stack-development #algorithmic-problem-solving #UI-UX-design #AI #ML #data-science #cybersecurity.
+    </h3>
+  </CarouselSlide >,
   <CarouselSlide>
-    <h1>Approach to Work 💭</h1>
-    <SectionText>
-      My approach to work is defined by meticulous attention to detail and a drive for excellence. Continual learning is the cornerstone of my personal and professional philosophy, and I eagerly apply new insights to my problem-solving toolbox. Whether applied to personal projects or professional endeavors, I derive immense satisfaction from applying the latest knowledge to create innovative solutions.
-    </SectionText>
-  </CarouselSlide>,
+    <h1>Approach to Work ✅</h1>
+    <ul style={{ textAlign: 'left' }}>
+      <li>
+        Meticulous attention to detail and a drive for excellence.
+      </li>
+      <li>
+        Continual learning and applying new insights to my toolbox.
+      </li>
+      <li>
+        Going above and beyond to satisfy and impress.
+      </li>
+      <li>
+        Keeping up to date with the latest tech and tools.
+      </li>
+      <li>
+        Always keeping the customer in mind.
+      </li>
+      <li>
+        Improving the lives of others.
+      </li>
+    </ul>
+  </CarouselSlide >,
   <CarouselSlide>
     <h1>Getting Outside 🏔️</h1>
-    <SectionText>
-      Following my academic achievements, I sought an environment that more closely resonates with my adventurous spirit and active lifestyle, which I accomplished by relocating to the <a style={{ color: 'white' }} href="https://www.bouldercoloradousa.com/travel-info/bouder-happiest-city/#:~:text=National%20Geographic%20and%20the%20%22Today,list%20for%20several%20years%20running." target="_blank" rel="noreferrer">Happiest Place in the US</a>, Boulder, Colorado, bringing me within view of breathtaking mountains, invigorating <s style={{ color: 'gray' }}>ski</s> snowboard resorts, and a wonderfully active community.
-    </SectionText>
+    <Dual>
+      <SectionText style={{ width: '60%' }}>
+        Following my academic achievements, I sought an environment that more closely resonates with my adventurous spirit and active lifestyle, which I accomplished by relocating to the happiest place in the US, Boulder, Colorado, bringing me within view of breathtaking mountains, invigorating <s style={{ color: 'red' }}>ski</s> snowboard resorts, and a wonderfully active community.
+      </SectionText>
+      <Image className='snowboard' src={snowboard} alt='snowboard' />
+    </Dual>
   </CarouselSlide>,
   <CarouselSlide>
     <h1>I'm currently on the hunt for exciting opportunities!<br /><br />Send me a message! 😄</h1>
