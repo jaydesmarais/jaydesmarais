@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { ExternalLink } from 'components/Buttons'
-import { BsGithub, BsFiletypePdf, BsFileEarmarkZip, BsFillBugFill } from 'react-icons/bs'
+import { BsGithub, BsFillBugFill } from 'react-icons/bs'
 import { SectionHeader, SectionSubHeader, SectionText, StickyContainer } from 'components/Section'
 import healthAppImages from 'images/healthApp/photos.js'
 import liftLogImages from 'images/liftLog/photos.js'
@@ -115,14 +115,14 @@ const Projects = () => {
             </SectionText>
             <SectionText className='logo'>
               <BsFillBugFill size='40' color='lightgreen' style={{ paddingRight: '20px' }} />
-              This site is still in progress, so please don't mind any bugs (but feel free to send me any ideas or poiners)! *Not yet optimized for mobile.<br />
+              This site is still in progress, so please don't mind any bugs (but feel free to send me any ideas or pointers)! *Not yet optimized for mobile.<br />
             </SectionText>
             <h3>
               #React #JavaScript #HTML/CSS
             </h3>
             <StyledButtonGroup>
               <ExternalLink href='https://github.com/jaydesmarais/jaydesmarais' target='_blank'>
-                Source Code &nbsp;
+                View on GitHub &nbsp;
                 <BsGithub size={20} />
               </ExternalLink>
             </StyledButtonGroup>
@@ -155,16 +155,8 @@ const Projects = () => {
             </h3>
             <StyledButtonGroup>
               <ExternalLink href='https://github.com/jaydesmarais/HealthApp' target='_blank'>
-                Source Code &nbsp;
+                View on GitHub &nbsp;
                 <BsGithub size={20} />
-              </ExternalLink>
-              <ExternalLink href='https://jaydesmarais.s3.us-east-2.amazonaws.com/CMSC434+Midpoint.pdf' target='_blank'>
-                Midpoint Report &nbsp;
-                <BsFiletypePdf size={20} />
-              </ExternalLink>
-              <ExternalLink href='https://jaydesmarais.s3.us-east-2.amazonaws.com/CMSC434+Final.pdf' target='_blank'>
-                Final Report &nbsp;
-                <BsFiletypePdf size={20} />
               </ExternalLink>
             </StyledButtonGroup>
           </ProjectDescription>
@@ -205,13 +197,9 @@ const Projects = () => {
               #Swift #XCode #Firebase
             </h3>
             <StyledButtonGroup>
-              <ExternalLink href='https://jaydesmarais.s3.us-east-2.amazonaws.com/LiftLog.zip' target='_blank'>
-                Project Files &nbsp;
-                <BsFileEarmarkZip size={20} />
-              </ExternalLink>
-              <ExternalLink href='https://jaydesmarais.s3.us-east-2.amazonaws.com/CMSC436Final.pdf' target='_blank'>
-                Final Report &nbsp;
-                <BsFiletypePdf size={20} />
+              <ExternalLink href='https://github.com/jaydesmarais/iOS-Lift-Log' target='_blank'>
+                View on GitHub &nbsp;
+                <BsGithub size={20} />
               </ExternalLink>
             </StyledButtonGroup>
           </ProjectDescription>

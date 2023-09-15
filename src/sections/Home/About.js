@@ -32,7 +32,7 @@ const aboutContent = [
   <CarouselSlide>
     <h1>Hello! 👋🏻 I'm Jay! 👨🏻‍💻 </h1>
     <SectionText>
-      I'm a problem solver at heart. By studying computer science, I've discovered my passion for using technology to enhance everyday life. Whether it's crafting engaging websites, empowering apps, or streamlining work, I'm dedicated to creating solutions that make a tangible impact. My goal is to add enjoyment to the ordinary and increase accessibility to the extraordinary. Welcome to my journey of innovation
+      I'm a problem solver at heart. By studying computer science, I've discovered my passion for using technology to enhance everyday life. Whether it's crafting engaging websites, empowering apps, or streamlining work, I'm dedicated to creating solutions that make a tangible impact. My goal is to add enjoyment to the ordinary and increase accessibility to the extraordinary. Welcome to my journey of innovation!
     </SectionText>
   </CarouselSlide>,
   <CarouselSlide>
